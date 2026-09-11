@@ -1,8 +1,3 @@
----
-title: moleculat_bio_1st_exam
-
----
-
 # molecular biology 1st
 ## chapter 1 and 2
 ### before we start the class...
@@ -105,6 +100,10 @@ title Griffith's experiment
   - 有些基因甚至編碼RNA，而非蛋白質
   - 原核生物通常是一基因一多肽，但是真核生物有些可以做 "可變基因剪切"
 
+> [!Important]
+> ##### 必記 😏
+> - 現在已經基本有共識，**即使你編碼的是IncRNA，你也會被認為是 "gene"**，即使你不會產生蛋白質 🐱
+
 #### Hershey–Chase experiment
 - 利用phage T2，蛋白質外殼 + DNA核心
 - 用 $^{35}S$ 標記蛋白質 (Cys and Met有S)， $^{32}P$ 標記DNA (磷酸基團)
@@ -146,6 +145,21 @@ title Griffith's experiment
 > ```
 
 ![image](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/nucleotide_structure_0301.png)
+
+#### 反應機構
+##### 定位
+- DNA 聚合酶將 dNTP $\alpha$ -磷酸靠近引子 3'-OH
+- $Mg^{2+}$ 雙金屬離子協助穩定負電荷
+
+##### 親核攻擊
+- 3'-OH 的氧原子進攻 $\alpha$ -磷酸的磷原子 (路易士鹼攻擊P)
+- 形成一個五配位過渡態 (pentavalent transition state)
+
+##### 鍵形成
+- 新的磷酸二酯鍵在 3'-O 與 $\alpha$ -磷酸之間形成
+- DNA 鏈延長一個核苷酸
+
+![image alt](https://image2.slideserve.com/3693475/slide4-l.jpg)
 
 #### Chargaff's rules and double helix
 - 嘌呤的數量大致和嘧啶差不多，$N_A = N_T,\ N_C = N_G$
@@ -253,11 +267,13 @@ flowchart LR
   tc-.->tRNA([產生tRNA])-->|切割折疊|aats([和酵素以及<br>活化的胺基酸<br>產生反應])-->|形成|aat([胺醯tRNA])-->pp
 ```
 
-- DNA在轉錄時，一個為template strand，一個是coding strand
+> [!Important] 
+> ##### 必記 😏
+> - DNA在轉錄時，一個為**template strand (anticoding strand, antisense strand)**，一個是**coding strand (nontemplate strand, sense strand)**
 
 #### 蛋白質結構
 - 胺基酸由alpha-C為中心，一邊接 $NH_3^+$ ，一邊接 (COO^-)，一邊接 $H$ ，一邊接**R group**
-- 胺基酸脫水後連接，以peptide bond相連，多肽分為N端和C端，沒有氫鍵時就是**primary structure**，有氫鍵做成 $\alpha$ -helix，或是 $\beta$ -sheet 時，就是**secondary structure**
+- 胺基酸脫水後連接，以**peptide bond (你也可以說是amide bond)** 相連，多肽分為N端和C端，沒有氫鍵時就是**primary structure**，有氫鍵做成 $\alpha$ -helix，或是 $\beta$ -sheet 時，就是**secondary structure**，方向為N端到C端
 
 ![image alt](https://image.slideserve.com/839292/protein-secondary-structure-l.jpg)
 
@@ -270,13 +286,21 @@ flowchart LR
 
 <iframe src="https://Jacklyn301.github.io/molecular_model/3ORH_Human%20guanidinoacetate%20N-methyltransferase%20with%20SAH.html" width="100%" height="400px"></iframe>
 
-- 蛋白質有時會分成不同區域，這又被稱為domain
-- 這些domain有時可以看到叫做motifs的結構，例如所謂的鋅指就是其中一種
+- 蛋白質有時會分成不同區域，並不一定像是globin一樣成為一坨蛋白質，這又被稱為domain
+- 這些domain有時可以看到叫做**motifs**的結構，例如所謂的鋅指就是其中一種
+
+> [!Important]
+> 如果你說的是functional domain，那分類方式通常只是有功能的一小塊區域 (相當於motif)，並不是一整個三級結構 ! 😗
+
 - 多數蛋白質並非有了自身序列就會自動摺疊，往往需要酵素以及合適的環境
 - 但是蛋白質會因為胺基酸疏水或是親水的特性自動摺疊
 - 通常來說，Leu、Val、Ile等疏水胺基酸會聚集在蛋白質中間的地方，避免靠近水
 
-#### 遺傳和生化機制
+> [!Important]
+> - **蛋白質折疊的主力，其實就是hydrophobic force**，水分子強迫把所有疏水的東西放在一起
+> - **先確保親水疏水，再進行折疊 !** 😲
+
+#### Garrod's experiment
 - Archibald Garrod 在 1902 年首次提出**先天性代謝錯誤 inborn errors of metabolism**
 - 他發現疾病 (例如研究**alkaptonuria**) 可以因為基因缺陷導致特定酵素缺失，進而影響代謝途徑
 - 當時人們以應知道代謝是酵素參與，而它們發現這些代謝疾病似乎有遺傳傾向，因此開始認為gene和酵素有一定的關係
@@ -318,12 +342,13 @@ class 4m3a P
 ```
 
 - 同時，劍橋科學家 William Bateson 指出alkaptonuria符合孟德爾的隱性遺傳模式，並進一步推動**遺傳學 (genetics)** 這一學科的建立
-- 這個實驗和Beadle等人用麵包黴 (Neurospora crassa) 做出來的實驗假設類似
+- 這個實驗和Beadle和Tatum等人用麵包黴 (*Neurospora crassa*) 做出來的實驗假設類似
 
 #### 基因分析
 - 在基因分析上也做了一樣的事情。身為子囊菌的麵包黴，在形成2n的合子後會在減數分裂和細胞分裂後生成兩個8個子囊孢子
 - 如果將突變的麵包黴和wild type 雜交，而同時該疾病是由單一的基因突變引起，那這8顆孢子，應該就有4顆是突變型
-- 後來經過更深一步研究，從 "一酵素一基因" 假說，變成 "一多肽一基因" 假說
+- 後來經過更深一步研究，**從 "一酵素一基因" 假說，變成 "一多肽一基因" 假說**
+- 因此，蛋白質還可以作為激素、轉錄因子、細胞膜通道等等
 
 ### 如何傳遞訊息?
 - Crick發現說，DNA位於真核細胞的細胞核中，但是蛋白質往往是在細胞質中合成。所以一定有東西把DNA的訊息傳到了細胞質
@@ -331,6 +356,8 @@ class 4m3a P
 
 > [!Note]
 > 一個細胞中有很多不同種核糖體，而rRNA攜帶特定的訊息，反覆合成同一個蛋白質 ! 🫠
+
+#### Jacob's experiment
 
 - 當然，Jacob等人並不買帳，他們想要證明核糖體並不是訊息載體
 - 他們先用 $^{15}N$ 和 $^{13}C$ 等較重的同位素培養細菌，讓這些細菌的核糖體逐漸含有這些標記的同位素
@@ -343,11 +370,23 @@ class 4m3a P
 > - 也就是說，這些舊的RNA不僅不可能攜帶嗜菌體的遺傳信息，可能也根本不攜帶任何宿主的遺傳訊息
 > - **核糖體從頭到尾基本上就是固定的！** 🧐
 
-- 後來發現傳遞訊息的RNA，半衰期很短，並且與蛋白質合成同步
-- 同時，這些短壽命 RNA 與 DNA 序列相對應，顯示它們是 "DNA 的抄本"，更進一步證明他們不是核糖體的固定成分
-- 這後來被稱為mRNA
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/Francois_Jacob's_experiment_0911.png)
 
-#### 轉錄
+- 後來發現傳遞訊息的RNA，半衰期很短，並且與蛋白質合成同步
+- 同時，這些短壽命 RNA 與 DNA 序列相對應，顯示它們是 **"DNA 的抄本"**，更進一步證明他們不是核糖體的固定成分
+- 這後來被稱為**mRNA**
+
+### 轉錄
+#### mRNA structure
+- 通常長這個樣子: 
+
+$$
+\boxed{\text{5'-UTR, leader}}-\boxed{\text{coding region}}-\boxed{\text{3'UTR, trailer}}
+$$
+
+- coding region對應到的就是DNA的ORF
+- 其中，起始密碼子和終止密碼子都是包含於coding region
+#### 過程
 - 通常分為三個階段: 起始、延伸、中止
 
 |phase|description|
@@ -356,7 +395,8 @@ class 4m3a P
 |**Elongation**|合成時為**RNA本身的5'到3'方向**，轉錄泡隨著RNA pol移動，轉錄完的上游區域會重新變成雙股螺旋，一次一條RNA，一次只拿一股DNA當模板|
 |**Termination**|基因末端往往有terminator，會發出終止訊號，並和RNA pol相互作用，使RNA從DNA和RNA pol分離|
 
-- 通常轉錄開始時，RNA 第一個 nucleotide 常常是ATP或是GTP，RNA的5' 保留pppA或是pppG，因為它是 de novo synthesis，沒有 primer。
+- 通常轉錄開始時，RNA 第一個 nucleotide 常常是ATP或是GTP，RNA的5' 保留pppA或是pppG，因為它是 de novo synthesis，沒有 primer
+- 它們辨識到底要從哪裡開始轉錄的方式，就是**透過motif來辨識promoter**
 
 > [!Important]
 > ##### Most initiations are abortive
@@ -377,7 +417,9 @@ class 4m3a P
 > - RNA常常做一半就掉出去，重新開始，這叫做**abortive initiation**，產生小 RNA。
 
 - 當做到 8~10 nt的時候，這時候 RNA polymerase開始離開 promoter，開始進入穩定 elongation
+- 也就是說，剛開始時通常移動速度不會太快，因為這時候要**確保配對的位置是對的**
 
+### 轉譯
 #### ribosome
 - E.coli的兩個單元大概是30S和50S (沉降係數，離心時辰降到管底的速度)，兩個形成70S的核糖體
   - **small subunit** = 16S rRNA + 21個蛋白質
@@ -387,6 +429,8 @@ class 4m3a P
 > [!Warning]
 > 沉降係數和顆粒質量不成正比，通常來說，關係大致如下: 
 > $$\text{沉降係數}\propto(\text{質量})^{\frac{2}{3}}$$
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/composition_of_the_E.coli_ribosome_0911.png)
 
 #### tRNA
 - Crick當時想知道到底是什麼東西讓RNA的訊息變成蛋白質的，畢竟還沒甚麼相關的數據和研究
@@ -405,9 +449,9 @@ class 4m3a P
 
 | 特徵     | 解釋  |
 | ----| ---- |
-| degeneracy/redundancy<br>退化性 | 多個密碼子對應同一種胺基酸|
-| unambiguous<br>不模糊性| 特定一種密碼子只對應一種胺基酸 |
-| universal<br>廣泛性 | 所有生物共用同一套遺傳密碼，雖然偶有差異 |
+| **degeneracy/redundancy**<br>退化性 | 多個密碼子對應同一種胺基酸|
+| **unambiguous**<br>不模糊性| 特定一種密碼子只對應一種胺基酸 |
+| **universal**<br>廣泛性 | 所有生物共用同一套遺傳密碼，雖然偶有差異 |
 
 #### 轉錄的起始
 - translation開頭的codon為AUG
@@ -441,7 +485,15 @@ class 4m3a P
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/initiation_and_elongation_mechanism_in_translation_0606.png)
 
-- ORF (open reading frame) = DNA從起始密碼子到終止密碼子這一段
+#### codon bias
+- 生物的tRNA有時候會比較偏好某些密碼子，即使密碼子對應的是同一個胺基酸，因為...
+  - 不同的tRNA含量有差，使用對應的tRNA比較多的codon，轉譯比較快
+  - 高表達量的基因比較偏好那些轉譯不容易錯誤的密碼子
+  - 不同動物有不同的密碼子偏好
+- 如果你想要大量製造某一個蛋白質，將密碼子修改成E.coli偏好的，就能夠提升表現
+
+#### ORF
+- **ORF (open reading frame)** = DNA從起始密碼子到終止密碼子這一段
 - 一般來說，一條mRNA可能ORF會有很多個，畢竟你可能可以在一條序列中找到多個起始密碼子和終止密碼子，例如...
 
 ```text
@@ -454,26 +506,17 @@ class 4m3a P
 - 但是對典型的 eukaryotic mRNA，ribosome 通常會**從 5′ cap 附近開始 scanning**，找到合適的 start codon 後開始翻譯
 - 因此，如果有一個主要的、較長的 coding region，它就很可能是主要 protein-coding ORF
 
-#### mRNA區域
-- 通常長這個樣子: 
-
-$$
-\boxed{\text{5'-UTR, leader}}-\boxed{\text{coding region}}-\boxed{\text{3'UTR, trailer}}
-$$
-
-- coding region對應到的就是DNA的ORF
-- 其中，起始密碼子和終止密碼子都是包含於coding region
 
 ### 複製和突變
 #### replication
 - Crick等人在發表論文時，就已經有預測DNA應該會複製，以將訊息傳給子細胞
 - 而它們也預測DNA是透過**semiconservative replication**
-- 當然，當時還有其他假設，例如conservative (全保留)、dispersive (分散式)
-- 而透過Meselson–Stahl experiment，確定了DNA是半保留複製
+- 當然，當時還有其他假設，例如**conservative (全保留)**、**dispersive (分散式)**
+- 而透過**Meselson–Stahl experiment**，確定了DNA是半保留複製
 
 #### 無害的突變
 - 通常無害的點突變分為兩種: 
-   - **silent mutation**: 突變後的codon對應突變前的同一個胺基酸，例如 `AAA` = `AAG` = Lysine
+   - **silent mutation**: 突變後的codon對應突變前的同一個胺基酸，例如 `AAA` = `AAG` = Lysine (先不考慮codon bias的話 😗)
    - **conservative**: 突變後的codon對應突變前codon的胺基酸性質類似，例如 `CUC` = Leucine，`AUC` = Isoleucine，Leu和Ile皆為hydrophobic，蛋白質摺疊時比較不會出問題
 
 #### sickle cell disease
@@ -492,11 +535,130 @@ $$
 > [!Note]
 > 這就幾乎相當於這種蛋白質的 fingerprint ! 😏
 
-![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/Two-dimensional-chymotryptic-peptide-maps-of-iodinated-meta-vinculin-and-152-kD-protein.webp)
-
 - 所以如果去看看HbA (正常 $\beta$ 球蛋白)，以及HbS (不正常 $\beta$ 球蛋白)，圖譜上就會有差異
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/fingerprints_of_hemoglobin_A_and_hemoglobin_S_0911.png)
 
 #### 序列
 ![image alt](https://cdn.numerade.com/ask_images/40c7a5ca5a494b1d93ed3e29aa4a4c90.jpg)
 
 - 點突變導致原本正常序列的Glutamate變成Valine，前者帶電，親水性；後者偏向疏水性
+- 這導致hydrophobic interaction出現在血紅素之間，他們會聚集成纖維，使紅血球被撐成crecent，甚至破裂
+
+> [!Note] 
+> 紅血球易裂開才是造成貧血的主要原因，因為突變的血紅蛋白依然帶有攜氧能力 😗
+
+### 備註: 胺基酸的冷知識
+![image alt](https://www.sb-peptide.com/image/Amino-acid-periodic-chart.jpg)
+#### Leu和Ile的愛恨情仇
+- 這兩個長的很像，性質也類似
+- 但蛋白質在摺疊、形成 secondary structure 或 packing 時，Ile 的 $\beta$ -carbon 周圍已經塞了一個 methyl group
+- 這會讓它的側鏈比較 bulky，靠近 peptide backbone，**也就是比較 "卡"**
+
+
+> [!Tip]
+> - 🧬 Ile：「我要轉一下。」
+> - 🧬 Backbone：「這裡沒位置。」
+> - 🧬 Ile：「那我往旁邊。」
+> - 🧬 Neighboring residue：「也沒位置。」
+> - 🧬 Ile：「…… 😗」
+
+#### OH和SH
+- 相對來說，free的SH和free的OH比起來，更有攻擊性
+- 也就是說，cystenine的攻擊性可以說是20種氨基酸裡面最強的
+- 但是由於多數的-SH會變成雙硫鍵，因此很少Cys可以參與化學反應
+
+#### Pro的叛逆
+- proline的側鍵包含一個**吡咯烷環 (pyrrolidine ring)**，它的氮原子與 $\alpha$ -碳同時連接，形成一個五元環
+- 由於他是二級胺 (secondary amine)，所以在形成residue時，就沒有H可以提供H-bond
+- 同時，proline 的環結構使得 $\phi$ 角幾乎固定，主鏈不能自由旋轉 (原來是結構殺手 🤣)
+- 但是正因為他很硬，這件事情有時候反而非常有用
+- 例如在**某些turns、loops、bends裡面，Proline 可以幫助蛋白質形成特定幾何構形**
+
+
+---
+
+## chapter 4
+### restriction endonuclease
+- Stewart Linn在1960年代發現E.coli的一個限制酶
+- 之所以被稱為 "限制"，是因為這種酵素的主要功能就是把病毒入侵的DNA "切掉"，而且是切在virus DNA的中間，所以叫做 "內切酶"
+- 但是這個限制酶並無法準確切割特定位點，找到這種精準剪刀的幻想也已失敗告終 🫠
+
+#### HindII
+- *Hin*dII 來自 Haemophilus influenzae 的第二種限制酶 **(H + in + Rd菌株 + II)**
+- 產生的是平末端，如下: 
+
+```text
+    ↓
+GTPy PuAC
+CAPu PyTG
+    ↑
+```
+
+- 其中，Py代表嘧啶 (C/T)，Pu代表嘌呤 (A/G)
+> [!Important]
+> 這些限制酶只看你的序列是什麼，但凡有符合的序列就會切開，形成DSB，不管是不是在想要保留的基因序列上 ! 😗
+
+- 如果要切的限制位點要很長，例如*Not*I (`GCGGCCGC`，共8個鹼基對)，那麼平均來說要找該序列的機率更低，切出來的DNA片段也會更長
+> [!Note]
+> 這種restriction sequence很長的限制酶，又被稱為**rare cutter** 🐱
+
+- 然而，有些限制酶明明辨識同一個位點，但是切割的區域不一樣，這時候被稱為**neoschizomers**或是**heteroschizomer**，例如: 
+  - *Sma*I 辨識 `CCCGGG`，切在中間 → 產生 平端 (blunt ends)。
+  - *Xma*I 也辨識 `CCCGGG`，但切在不同位置 → 產生 黏性端 (sticky ends)
+- 相反，不同來源的限制酶，辨識同一個序列，而且切割位置也相同，這被稱為**isoschizomer**，例如: 
+  - *Sph*I 和 *Bbu*I 都辨識 `GCATGC`，並在同樣位置切割
+
+> [!Note]
+> sticky end通常更容易把兩個不同的DNA分子連接在一起 🧐
+
+- 它們通常辨識的序列為**回文序列 (palindrome)**，也就是一股從左到右讀，和另一股從右到左讀是一樣的
+
+
+|類型|定義|特徵|舉例|
+|---|---|---|---|
+|5′ overhang|在 DNA 的 **5′ 端留下單股突出序列**|突出端帶有磷酸基，容易與互補序列配對|EcoRI等限制酶切割|	
+|3′ overhang|在 DNA 的 **3′ 端留下單股突出序列**|突出端帶有羥基 (-OH)|KpnI等限制酶切割|
+
+
+#### Restriction-Modification system
+- 限制-修飾系統，又被稱為**R-M system**
+- 這套系統是為了確保細菌不會手殘把自己的DNA切掉了，通常配備: 
+  - **Restriction enzyme**: 負責辨識DNA的限制切點序列並切割
+  - **DNA methyltransferase**: 在自己 DNA 的限制酶辨識序列上，加入甲基 (methyl group)，限制酶就無法切割已被甲基化的序列
+
+> [!Tip]
+> #### 等一下...
+> - Q: 如果酵素可以讓兩股都甲基化，那DNA複製的時候，最終產生的DNA不就只會有一股是有甲基化的?
+> - A: DNA 複製後，確實會先產生半甲基化 DNA (舊股有甲基、新股沒有)，所以會有酵素 (如DNMT1)，專門負責辨認半甲基化 DNA，並且在新股上補上甲基
+
+##### 舊甲基化 vs 新甲基化
+
+|enzyme|舊甲基化酶|新甲基化酶|
+|---|---|---|
+|function|辨認半甲基化 DNA，它看到舊股有甲基，就在**新股同樣位置補上甲基**|在需要建立**新的甲基化標記**時 (例如發育或分化)，會在原本沒有甲基的 CpG 上加上甲基|
+|example|DNMT1|DNMT3|
+
+#### 第一個成功的DNA重組
+- Boyer 和 Cohe n要證明外源 DNA 可以被剪接到質體中，並在大腸桿菌裡穩定存在，具體步驟大概是: 
+
+```mermaid
+timeline
+title recombinant DNA assembled in vitro 🦠
+   選擇載體質體: 利用小型質體 pSC101: 該質體具備<br>抗四環素<br>抗性標記
+   選擇另一個載體: 利用小型質體 RSF1010: 該質體具備<br>抗鏈黴素<br>抗性標記
+   切割 DNA 片段: 利用限制酶 EcoRI<br>切割兩個質體: DNA ligase<br>將磷酸二酯鍵封合
+   轉入大腸桿菌: 使用 CaCl₂ 處理<br>增加細胞膜通透性: 熱震法促進<br>質體進入細胞
+   篩選與表達: 在含抗生素的<br>培養基上生長: 這些攜帶兩種<br>抗性基因的細菌<br>可以存活
+```
+
+#### 載體和外源基因
+- 這些vector通常會有ori，而外來基因沒有。也就是說，只有當外來基因成功和vector重組，才有表現的可能
+- 讓DNA可以transformation成功的方式大概有: 
+  - 利用 CaCl₂ 等鈣鹽，讓細胞膜通透
+  - 利用電的，迅速在細胞膜上弄出小洞 (electroporation，電穿孔)，然後期望DNA可以進去 🙂
+
+
+#### 如果vector是plasmids
+- Boyer 和他的同事們建立了一套載體，被稱為 **pBR 質體系列 (pBR plasmid series)**
+- 這些質體有不少特徵: 
