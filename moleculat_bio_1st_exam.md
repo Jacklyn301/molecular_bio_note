@@ -996,4 +996,209 @@ title 篩選噬菌斑
 - T-DNA也有製造合成**鴉片鹼 (opines)** 的酵素，以當作細菌自己的食物來源。同時，該基因也有一個很神的promoter
 - 然後，一樣的，腦子很靈的科學家就想透過Ti plasmid，以及那很神的promoter，**把抗殺草劑或是控制果實成熟的基因插到裡面去**
 
-![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/Ti-plasmid_structure_0603.png)# molecular biology 1st
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/Ti-plasmid_structure_0603.png)
+
+---
+
+## chapter 5
+### 分開分子的方法
+#### Gel Electrophoresis
+- 如果想要從一堆DNA或是RNA裡面純化出特定一段，就可以用電泳分離片段
+   - 用comb在agarose上弄出well (或是slot)
+   - DNA/RNA從負極走到正極
+   - 分子小的跑得快，分子大的跑得慢
+   - 可以用跑的距離估算分子量
+
+$$\log(M) = a-b\cdot d$$
+
+- 其中， $M$ 為DNA片段大小， $d$ = 遷移距離， $a$ 和 $b$ 是由marker校正得到的常數
+- 當然，在小片段 (<100 bp) 或超大片段 (>20 kb) 時，關係可能偏離線性
+
+> [!Note]
+> 當然也有蛋白質電泳，只是相對來說稍微複雜些
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/analysis_of_DNA_fragment_size_by_gel_electrophoresis_0913.png)
+
+#### 為啥要用PFGE
+- DNA就像是義大利麵一樣，越長就越容易在提取時斷給你看
+- 而且，普通 agarose gel 在持續電場下，DNA > 30–50 kb 幾乎不會分開 (想想看頭髮卡在排水網上的畫面 🙂)
+- pulsed-field gel electrophoresis (PFGE，脈衝場凝膠電泳) 可以透過不斷改變電場方向，讓大分子DNA重新定位
+- 這樣它們可以逐步鑽過凝膠網格，依照大小分開
+
+> [!Tip]
+> ##### 想像一下: 
+> - Q: 如果你懶得撿排水網上的頭髮怎麼辦? 
+> - A: 用水沖進去? 
+> - Q: 可是它會卡住阿。
+> - A: 那我用蓮蓬頭，然後刷刷刷刷那樣不連續的沖排水孔 😗
+
+#### 那SDS-PAGE是啥? 
+- 是 **"利用SDS處理過的聚丙烯胺凝膠電泳"**，主要分離的不是核酸，而是蛋白質
+- 而且蛋白質在分離之前還會用**sodium dodecyl sulfate (SDS) 處理**
+- 跑完後的多肽是看不見的，所以會用**Coomassie Blue**染色，產生條紋
+
+> [!Note]
+> - 簡單來說，把他當成清潔劑，他會把一條一條多肽獨立分開，並且讓所有多肽上都布滿負電荷
+> - 和核酸的電泳一樣，短得多肽跑得快，長得多肽跑得慢 😏
+
+![image alt](https://media.geeksforgeeks.org/wp-content/uploads/20240209122237/SDS-PAGE.png)
+
+#### 二維凝膠電泳
+- 雖然SDS-PAGE分離多肽挺不錯的，但是這些分離的多肽屬於 "分子量相似"，因此即使在同一個條紋上的多肽，依然是很複雜的混合物
+- 所以有科學家乾脆讓蛋白質跑兩次電泳，而兩次的聚丙烯胺濃度和pH值有所差異，只是這不能用SDS，因此無法分離單一的多肽
+- 因此二為凝膠電泳就是解決這個問題。具體來說就是: 
+  - 先用細管凝膠做出有pH梯度和電場的環境，讓這些蛋白質在管中走到屬於自己的**等電點 (isoelectric point)** 上
+  - 這一步驟又稱為**等電聚焦 (isoelectric focusing)**
+  - 然後把該凝膠取出，進行常規的SDS-PAGE
+  - 此時，膠盤上的每一個點，就是一個蛋白質
+
+![image alt](https://www.creative-proteomics.com/blog/wp-content/uploads/2018/03/2D-Electrophoresis-cover.jpg)
+
+### 色層分析法
+#### 離子交換層析
+- 主要利用**樹酯 (resin)**，根據物質的電荷進行分離
+- 這些樹酯上面通常有一些特定的基團，**例如DEAE (二乙胺基乙基)** 帶有正電荷，可以把帶負電的物質分離出來，這叫**陰離子交換層析**
+- 至於層析後到底要怎麼把欲保留的蛋白質從resin上取下來? 主要就是用**極濃的鹽類水溶液把他們 "洗 (eluted)" 出來**
+- 在elution時，沖洗液的濃度會越來越高，並且 "分次收集" 
+- 如果收集的東西是酵素，你可以用底物的反應情況 (照分光光度儀推測反應速率)
+
+![image alt](https://api.intechopen.com/media/chapter/44033/media/image5_w.jpg)
+
+- 當然，也可以用帶有負電荷基團 phosphocellulose 的resin，就可以做**陽離子交換層析**
+
+#### 凝膠過濾色譜法
+- 分離蛋白質的重點: **步驟越少越好 !**
+- 但是如果你同時弄陰離子和陽離子交換層析，那你往往要第三步: 乾脆直接用蛋白質大小
+- 這時用的樹酯會有多孔，當大大小小的分子流過這些resin時，小分子會穿過樹酯的孔洞，大分子會直接繞過
+- 因此大分子會比較快洗出來
+
+![image alt](https://i.pinimg.com/originals/f3/24/d8/f324d8a28f8c4ddf45c8cc7041b1a556.jpg)
+
+#### 親合層析法
+- **affinity chromatography** 的其中一個例子，例如resin上面有抗體
+- 這跟剛剛的其他層析最不一樣的地方就是: **這篩選方式幾乎有絕對的特異性**，例如在上一章節提到的用鎳來特異性吸引寡His鏈
+
+> [!Tip]
+> 甚至如果你確定這批結合到resin上的很 "純"，你乾脆直接把resin和蛋白混合混合，拿去離心，提取pellet就好 ! 😏
+
+- 而elute的方法，通常就是用可以競爭該特異性位點的物質去洗，目的就是破壞特異性連結
+
+### label tracer
+- 如果只是用紫外光析收或是染料染色，如果RNA或是DNA的數量太少太少，直接用這種方式測量幾乎不可能
+- 因此有人就嘗試用放射標記，例如用可和其互補的probe，並且該probe有放射性同位素，像是... 🐱🐱
+
+#### Autoradiography
+- **放射自顯影**的機制有點像是底片，就是讓一些放射性的DNA進行電泳後，把agarose和**X-ray膠片接觸**
+- 然後放置好幾天，讓DNA的輻射**曝光底片**，顯影後，膠片上會出現黑色條帶
+- 為了增加靈敏度，可以利用**intensifying screen**，這種屏幕在遇到激發的電子 ( $\beta$ -electron) 時就會發光，而放射線就常常來自於電子
+
+![image alt](https://xbio-live.s3.amazonaws.com/bio-dictionary/thumb/AUTORADIOGRAPHYII.DP.RGB.png)
+
+- 通常在intensifying screen上顯影最好的物質就是 $^{32}P$ ，其 $\beta$ -electron能量夠強
+- 如果是想要預估DNA片段中放射性的精確含量，那可以將該底片偵測其吸光值。**吸光值越高，放射性越強**
+
+#### Phosphorimaging
+- 放射自顯影有一個問題，就是當衰變的強度到達一定量的時候，這個底片基本上就幾乎全黑了
+- 也就是說，他有**飽和的問題**，可能五萬次衰變的條紋跟一萬次衰變的長相一模一樣
+- **磷光呈像儀**可以透過檢測放射出來的電子進行分析，也就是用電腦偵測放射線了
+- 具體來說: 
+   - 你拿一個樣品，將其和**phosphorimager plate**放在一起
+   - 這個板子上的原子基本呈現激發態
+   - 當樣品的 $\beta$ -electron撞到這個板子時，就會釋放出能量
+   - 而這些能量會被儀器偵測到，並且以顏色呈現能量強度差
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/false_color_phosphorimager_scan_of_an_RNA_blot_0915.png)
+
+#### Liquid scintillation counting
+- 基本上就是將放射出來的電子，轉成光子的能量，然後儀器去捕捉發出來的光脈衝
+- 例如，你可以把一個agarose上的條帶丟到螢光劑裡面，當螢光劑分子吸收放射出來的電子能量，就會出現閃光
+- 而電腦要做的，就是算光脈衝的量 (計數)，閃越多次，代表信號越強
+
+### nonradioactive tracer
+
+> [!Tip]
+> - Q: 即使偵測放射線靈敏度很好，但是總是有人覺得很危險
+> - A: 不如請酵素來幫忙? 😗😗
+
+- 酵素在良好的活性下，就可以倍增式的製造產物，從而放大信號，例如你可以用這種方式...
+   - 我製造一種探針，該探針會在某些核甘酸 (例如dUTP) 上面接上特定的蛋白質 (例如biotin，生物素)
+   - 把這種probe和待測的DNA雜交，這樣DNA上就有生物素探針
+   - 在鹼性磷酸酶 (alkaline phosphatase) 上**配上具有專一性辨識蛋白質的抗體**，例如這裡就是在鹼性磷酸酶 + 生物素抗體組合
+   - 然後丟進雜交後的DNA裡面，使鹼性磷酸酶和probe結合
+   - 接下來再撒入銜接磷酸基的螢光分子
+   - **當磷酸基被酵素切下來時，分子就能夠發光**，發光越多 = 斷更多磷酸基 = 更多酵素同時幫忙 = 更多probe = 更多被標記的DNA
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/detecting_nucleic_acids_with_a_nonradioactive_probe--take_AKP_and_biotin_for_example_0913.png)
+
+### 當你發現雜交也有用時
+#### Southern blots
+- 由Edwin Southern在1975年發現，通常是在大量核酸裡，檢測特定 DNA 片段
+- 原理通常是把 DNA 片段分離後，轉移到膜上，再用標記探針檢測
+
+```mermaid
+timeline
+  title Southern blot 🧬
+   DNA 切割: 用限制酶<br>把基因組 DNA<br>切成片段
+   凝膠電泳: 在 agarose gel<br>中分離片段<br>依大小不同<br>跑出不同位置: 這時的條帶<br>會像瀑布一樣<br>黏在一起 🤣
+   blotting: 把 DNA 從凝膠轉移<br>到硝酸纖維素膜<br>或尼龍膜上: DNA 固定在膜上
+   hybridization: 加入帶標記的<br>DNA/RNA 探針: 可以是放射性<br>或非放射性: 探針會和膜上的<br>互補序列結合
+   檢測: autoradiography<br>或化學顯色<>br>檢測信號: 如果存在多個條帶<br>可能代表存在<br>多個類似基因
+```
+
+![image alt](https://sciencevivid.com/wp-content/uploads/2022/06/SOUTHERN-BLOTTING.png)
+
+#### DNA fingerprint
+- 事實上，Southern blots也可以做為犯罪鑑定
+- 例如，我們知道每個人的STR (或是minisatellite等重複序列) 的 "數量" 不一樣
+- 也因此，在做限制酶切位時，不同人的同一條染色體，可能短序列大小不一樣，因為有些人STR重複多，有些重複少
+- 那我們如果做一個雜交於STR的探針，那不同的人blotting後，條紋也會不一樣!
+
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/southern_blotting_tandem_repeat_0306.png)
+
+> [!Note]
+> - 因為每個人的條紋都不一樣，因此這也被稱為DNA指紋 😗
+> - 不過如果是同卵雙胞胎的話，產生的條帶基本是一樣的 😏
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/G.%20Vassart%20et%20al.%2C%20A_sequence_in_M13_phage_detects_hypervariable_minisatellites_in_human_and_animal_DNA_0915.png)
+
+- 雖然說大家的DNA fingerprint都不太一樣，不過通常來說，這些條帶其實也有遺傳的傾向
+- 因此，這也可以用來確定，痾，你身邊的某個孩子到底是不是你的 🤣
+
+> [!Tip]
+> 請問下列圖片中，A和B誰是兇手? 🧐
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/use_of_DNA_typing_to_help_identify_a_rapist_0915.png)
+
+#### RFLP
+- 利用限制酶切割 DNA 後，因為不同個體的 DNA 序列存在差異，導致切割片段的長度不同
+- 但跟一般辨識STR長度的差別在於，這個東西是看突變，而且往往是位於限制酶切位上的點突變
+- 限制酶只能辨識特定序列 (例如 GAATTC)，如果某個個體在這個序列上有突變，限制酶就切不開
+- 這就導致不同個體的 DNA 在電泳中會呈現不同片段長度
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/RFLP_SCD_0306.png)
+
+#### in situ hybridization
+- 原位雜交的準備條件，要先確保細胞中的染色體展開，並且**部分呈現解璇狀態** (不然你的probe插不進去)
+- 然後讓染色體跟已標記的探針雜交，這樣這些標記就會散布在某些特定細胞上
+- 如果probe上面有螢光標記，就是 **fluorescent in situ hybridization (FISH 🐟)**
+
+![image alt](https://www.genome.gov/sites/default/files/tg/en/illustration/fluorescence_in_situ_hybridization_fish.jpg)
+
+
+
+#### Western blot
+- 不同於Southern blot檢測的是核酸，Western blot用途主要是用來**檢測特定蛋白質的存在與大小**
+- 原理基本上就是將蛋白質分離後轉移到膜上，再用**抗體辨識**
+
+```mermaid
+timeline
+  title Western blot 🧬
+   蛋白質萃取: 從細胞或組織中<br>取出蛋白質: 利用 SDS-PAGE<br>按分子量<br>分離蛋白質
+   blotting: 把蛋白質<br>從凝膠轉移到<br>PVDF 或硝酸<br>纖維素膜
+   blocking: 用牛血清白蛋白<br>封閉膜上的<br>非特異性結合位點: 這讓抗體沒有<br>機會亂黏，減少<br>背景雜訊
+   抗體檢測: primary<br>antibody 專一性<br>辨識目標蛋白: secondary<br>antibody 帶有<br>酵素或螢光標記<br>用來顯示訊號
+   顯影: 透過化學發光、<br>螢光或顏色顯影<br>檢測蛋白質
+```
+
+![image alt](https://www.biomol.com/media/image/1f/3e/8f/Principle_WB_EN.png)
+
