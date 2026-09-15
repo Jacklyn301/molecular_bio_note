@@ -1142,7 +1142,7 @@ timeline
    凝膠電泳: 在 agarose gel<br>中分離片段<br>依大小不同<br>跑出不同位置: 這時的條帶<br>會像瀑布一樣<br>黏在一起 🤣
    blotting: 把 DNA 從凝膠轉移<br>到硝酸纖維素膜<br>或尼龍膜上: DNA 固定在膜上
    hybridization: 加入帶標記的<br>DNA/RNA 探針: 可以是放射性<br>或非放射性: 探針會和膜上的<br>互補序列結合
-   檢測: autoradiography<br>或化學顯色<>br>檢測信號: 如果存在多個條帶<br>可能代表存在<br>多個類似基因
+   檢測: autoradiography<br>或化學顯色<br>檢測信號: 如果存在多個條帶<br>可能代表存在<br>多個類似基因
 ```
 
 ![image alt](https://sciencevivid.com/wp-content/uploads/2022/06/SOUTHERN-BLOTTING.png)
