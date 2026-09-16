@@ -1202,3 +1202,117 @@ timeline
 
 ![image alt](https://www.biomol.com/media/image/1f/3e/8f/Principle_WB_EN.png)
 
+### DNA定序 (🙂)
+#### Sanger
+- 1975年Sanger和他的同事Maxam發現了一種極度精準的定序法，這讓它們拿到了1980年諾貝爾獎
+- 方法叫做**chain-termination DNA sequencing**
+- 利用雙去氧核甘三磷酸**ddNTP**，中止DNA繼續複製，然後透過段在哪裡去推測DNA序列。具體方法:
+
+> [!Note]
+> - 加入ssDNA、primer (約21 nt)、DNA polI、dNTPs、還有一點點ddNTPs
+> - DNA合成，其中ddNTPs**隨機插入**，產生不同長度的DNA片段。
+> - 傳統上把反應分成四管，每一管只放一種ddNTP(也就是ddATP、ddTTP、ddCTP、ddGTP)
+> - 當隨機接上一個ddNTPs，就會停止配對，這些DNA的聚合何時終止是隨機的，因而產生長長短短的序列
+> - 然後把各個反應混合物片段以電泳分離...
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/sanger_sequencing_0330.png)
+
+- 在短序列的情況下，條帶是可以分離長度只相差一個鹼基的片段
+- 注意，我說的是 **"短序列情況"** 🤣
+
+> [!Tip]
+> Sanger那年代還沒有PCR，要弄出單股DNA，他們有時是請M13 phage幫忙生出cloned的單股DNA 😗
+
+#### automated
+- 進階的Sanger用的是**以不同顏色螢光標記的ddNTPs**，用雷射偵測顏色，電腦自動作色彩峰圖(chromatogram)
+- 也就是說，這些序列是可以放在同一個泳道，在電泳期間，DNA一邊跑，儀器一邊測量
+- 現在進行基因組定序時，sequenators一台裡面有數十甚至數百列泳道，等到每個泳道測定完成後，儀器會自動將結果傳入電腦進行分析
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/sanger_sequencing_with_dye-labeled_segment_0613.png)
+
+#### 高通量定序
+- 也被稱為NGS (次世代定序)，他們一次定序的讀取片段通常較短，可能只有幾十個鹼基
+- 1990年代出現pyrosequencing (焦磷酸定序)，相對於Sanger，精度不差，而且讀取速度更快，也不需要電泳
+- 用的機制就是在DNA pol在一個個接上核甘酸時，一次會釋放一個焦磷酸鹽 (PPi) 的特性，利用螢光，讓儀器有機會偵測焦磷酸鹽的釋放，從而分析出序列
+
+$$
+\begin{align}
+& dNMP_n + dNTP \underrightarrow{DNA\ pol} dNTP_{n+1} + PPi\\
+& PPi + \text{adenosine phosphosulfate} \underrightarrow{ATP\ sulfurylase} ATP + \text{sulfate}\\
+& ATP + \text{luciferin} + O_2  \underrightarrow{lucferase} AMP + PPi + \text{oxyluciferin} + CO_2 + light
+\end{align}
+$$
+
+- 每一輪反應結束後，會利用像 apyrase 這類酵素把未反應的 nucleotide 和相關反應物清掉，讓下一個 flow 不會被上一輪污染
+- 一些pyrosequencing是在固向載體上面進行聚合 (例如在bead或是板子上面)
+- 相反，有些是在溶液裡面進行反應
+- 當然，在液相反應裡，所有 dNTP 都在同一池子裡，如果不去除或控制，聚合酶可能會一次加上多個核苷酸，導致 "同步性" 失敗
+
+
+
+#### pyrogram
+- 在焦磷酸定序裡面，最重要的特點是: **加入 nucleotide 之後，新末端仍然有一個 3'-OH**
+- 所以pol如果連續遇到同一個重複核甘酸，例如 `TTTTT` ，狀況就會變成... **一次產生超級亮的T訊號**
+- 這在**pyrogram**上就可以清楚看到，可能小峰訊號就是代表一個核甘酸，中峰訊號是連續兩個相同核甘酸，超大峰訊號就是... 嗯 🤣
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/example_of_pyrogram_in_pyrosequencing_0915.jpg)
+
+#### 焦磷酸定序的毛病
+##### 1. 越讀越爛
+- 首先，就是他**最多一次定序200~300 bp**，超過這個值，定序的精確度就會越來越差
+- 因為 flow-by-flow 的 signal 在讀得越長之後，**會越來越難維持乾淨、可判讀的訊號**
+- 每一輪都可能會很倒楣的出現...
+  - nucleotide 沒有完全被清掉
+  - apyrase 清除不完全
+  - 背景噪音
+  - 不同 template molecules 反應速度不完全一致
+- 於是跑很多 cycle 後，前面的誤差會累積
+
+##### 2. 聚合速率不同步
+- 還有一個問題就是**不同步性**。你難道真的以為所有pol會乖乖聽話，一個口令一個動作? 🙂🙂
+
+> [!Tip]
+> - 理想: 
+> ```text
+> Molecule 1:  A → C → G → T 🧐
+> Molecule 2:  A → C → G → T 🧐
+> Molecule 3:  A → C → G → T 🧐
+> ```
+> - 現實: 
+> ```
+> Cycle 1:   █████████████ 同步
+> Cycle 50:  ███████████   還行
+> Cycle 150: ███████       開始散
+> Cycle 250: ███           🫠🫠
+> ```
+
+##### 3. 你以為 pyrogram 的峰高真的可以拿來數數?
+- 即使峰的高度和一次flow的連續核甘酸數量有正相關，但是，你要怎麼推回一個具體的數量? 舉例: 
+
+```text
+AAAAAAA
+AAAAAAAA
+AAAAAAAAA
+🙂🙂🙂🙂
+```
+> - 🧍：「額，這到底是 8 個 A 還是 9 個 A？」
+> - 🔬：「嗯……」
+> - 📈：「我看起來覺得是 8.6。」
+> - 🐱：「你給我閉嘴。」💀
+
+#### 那Illumina為什麼不會這樣? 🧐
+- Illumina裡面的每個 dNTP 都帶有 **"可逆封閉基團" (reversible terminator)**，一次只能加一個
+- 加完後，螢光訊號被讀取，**需要再去除封閉基團，下一個循環才能繼續**
+- 最經典的就是 5'-DMT 保護基
+- 每一輪大致就是: **把保護拿掉 → 讓 OH 可以反應 → 接下一個 nucleotide → 再處理化學基團**
+- 而且DNA 片段固定在 flow cell 上，反應是同步進行的，**每個循環只會有一個核苷酸被加入並被偵測**
+
+```mermaid 
+graph TB
+A[ DNA切成很多小片段，每一個片段用oligonucleotide接頭，adaptor，連接5'跟3']-->B[接頭包含primer，用來執行PCR，以及binding region，DNA接在某個基底上面需要用，]-->C[DNA被固定在玻片表面，玻片被稱為flowcell]-->D[開始橋式PCR，每一輪做完後分開雙股DNA，繼續下一輪，最終產生單股DNA叢集cluster]-->E[開始螢光定序，期間會用修飾的螢光核甘酸來阻止DNA複製。每次DNA合成停止時會發出特定的光。]-->F[例如每次加上ATCG，顏色就是🟠🔵🔴🟢]-->G[CCD拍照📸，然後去除螢光跟終止功能，開始下一輪。]-->E
+```
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/NGS_Illumina_0330.png)
+
+
+
