@@ -64,7 +64,7 @@ timeline
 title Griffith's experiment
   注射活的S型菌: 導致小鼠死亡: 有夾膜為致病關鍵
   注射活的R型菌: 小鼠依然存活: 無夾膜並不致病
-  注射加熱殺死的<br>R型菌: 小鼠存活: 死菌並不致病
+  注射加熱殺死的<br>S型菌: 小鼠存活: 死菌並不致病
   活的R菌 +<br>死的S菌: 小鼠死亡: 死鼠內可以<br>分離出活的<br>S型菌: R菌被轉化
 ```
 ![image alt](https://microbenotes.com/wp-content/uploads/2022/08/Griffiths-Transformation-Experiment.jpg)
@@ -445,7 +445,7 @@ $$
 
 <iframe src="https://Jacklyn301.github.io/molecular_model/1EHZ_the%20crystal%20structure%20of%20yeast%20phenylalanine%20tRNA.html" width="100%" height="400px"></iframe>
 
-- 相應的tRNA具體要配對的氨基酸往往是固定的 (不模糊性)，如果該tRNA對應到的氨基酸是alanine，那酵素只能讓alanine何其結合
+- 相應的tRNA具體要配對的氨基酸往往是固定的 (不模糊性)，如果該tRNA對應到的氨基酸是alanine，那酵素只能讓alanine和其結合
 - 這種酵素通稱為aminoacyl-tRNA synthetase
 
 
@@ -458,7 +458,7 @@ $$
 | **unambiguous**<br>不模糊性| 特定一種密碼子只對應一種胺基酸 |
 | **universal**<br>廣泛性 | 所有生物共用同一套遺傳密碼，雖然偶有差異 |
 
-#### 轉錄的起始
+#### 轉譯的起始
 - translation開頭的codon為AUG
 - **Shine-Dalgarno 序列**是細菌 mRNA 上的一段短序列，在AUG上游
 - 這些序列不完全是固定的，但是共識序列通常是 `AGGAGG`。它會**和 16S rRNA 的 3′ 端互補配對**
@@ -545,6 +545,7 @@ $$
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/fingerprints_of_hemoglobin_A_and_hemoglobin_S_0911.png)
 
 #### 序列
+
 ![image alt](https://cdn.numerade.com/ask_images/40c7a5ca5a494b1d93ed3e29aa4a4c90.jpg)
 
 - 點突變導致原本正常序列的Glutamate變成Valine，前者帶電，親水性；後者偏向疏水性
@@ -570,7 +571,7 @@ $$
 
 #### OH和SH
 - 相對來說，free的SH和free的OH比起來，更有攻擊性
-- 也就是說，cystenine的攻擊性可以說是20種氨基酸裡面最強的
+- 也就是說，**cystenine的攻擊性可以說是20種氨基酸裡面最強的**
 - 但是由於多數的-SH會變成雙硫鍵，因此很少Cys可以參與化學反應
 
 #### Pro的叛逆
@@ -930,26 +931,27 @@ $$1\times 2\times 1\times 3\times 2 = \boxed{12}$$
 
 > [!Important]
 > - 但是有時候會出現leaky的狀態，也就是即使沒有加IPTG，也有可能會表現一點點 🙂
-> - 所以其中一個方式就是在你的operon裡面額外加上一個*lacI* gene，這樣在表現你想要的基因時，repressor也會一起被轉錄出賴，並且加強該基因的抑制
+> - 所以其中一個方式就是在你的operon裡面額外加上一個*lacI* gene，這樣在表現你想要的基因時，repressor也會一起被轉錄出來，並且加強該基因的抑制
 
 #### 混合型的promoter
 - lac promoter有一個問題，就是他的活性太弱了
 - 因此後來又做了一個叫做**tre promoter**的東西，也就是可以被IPTG誘導，但是活性有trp operon的強度
-- $P_{BAD}$ 是一種可以被阿拉伯糖誘導的啟動子，在一些實驗中，會把綠**色的螢光蛋白 (GFP)** clone到 $P_{BAD}$ 載體中
+- $P_{BAD}$ 是一種可以被阿拉伯糖誘導的啟動子，在一些實驗中，會把**綠色的螢光蛋白 (GFP)** clone到 $P_{BAD}$ 載體中
 - 這樣，隨著阿拉伯糖濃度增加，電泳上螢光條紋的信號也會增強
 
 #### 溫度控制型promoter
 - 有些promoter是屬於溫度敏感型，例如 $\lambda$ phage promoter $P_L$ 
 - 該基因轉殖到細菌裡面時，會在載體上加入*cI857*，也就是這個promoter的repressor
-- 如果溫度較低 (32攝氏度)，這個repressor就會活化，阻遏promoter，z防止轉錄
+- 如果溫度較低 (32攝氏度)，這個repressor就會活化，阻遏promoter，防止轉錄
 - 如果溫度較高 (42攝氏度)，repressor在此環境下會失去功能，使operon被開啟
 
 #### fusion protein
 - 有些蛋白不一定只是原序列，往往會有不必要的東西在上面
 - 例如，你以藍白篩檢的質體為主時，限制酶切點在lacZ基因裡面，最後轉錄出來的蛋白就是 "目標序列 + 部分 $\beta$ -galactosidase"
-- 即使是混合蛋白，但是混核蛋白有時是有用的
+- 即使是混合蛋白，但是混合合蛋白有時是有用的
 - 例如 **"寡組胺酸表現載體"**，這載體在基因轉殖時，會在MCS的上游有一段His的短連續序列 (通常是六個)
 - 由於寡組胺酸對鎳 $Ni{2+}$ 有很強的親和性，因此在做親和性的層析時，只要打碎細菌，然後把一坨混合物倒入管柱，就很容易把這些有標記的蛋白質析出來
+- 而洗出這些target protein的方式，就是加入imidazole，去競爭 $Ni^{2+}$ ，使帶有寡組胺酸的蛋白質脫落
 - 而His tag是可以被去除的，通常用的是enterokinase (蛋白酶的一種)，把His tag切掉
 
 ![image alt](https://www.evitria.com/app/uploads/2022/11/purification-his-tagged-proteins.png)
@@ -968,10 +970,7 @@ title 篩選噬菌斑
 
 #### 真核生物基因的問題
 - 其中一個狀況是，細菌產生某轉殖基因的蛋白質時，完全有可能把他視為垃圾分解掉
-- 抑或是，這些蛋白質在細菌體內也沒有適當折疊的，反而可能因為疏水作用，這些外來蛋白質紛紛抱團取暖，形成一坨不溶於水的廢物
-
-<!-- 我知道我講的很粗暴但就是這樣喔呵呵 🙂 -->
-
+- 抑或是，這些蛋白質**在細菌體內也沒有適當折疊**，反而可能因為疏水作用，這些外來蛋白質紛紛抱團取暖，形成一坨不溶於水的廢物
 - 這時就可以使用**shuttle vector**，該載體在細菌和酵母菌中都可以表達
 - 這樣，當外來基因轉殖入酵母時，他會幫忙比較正確的折疊以及修飾
 
@@ -992,7 +991,7 @@ title 篩選噬菌斑
 - 如果是剛剛講的shutter vector，人家好歹在細菌和真菌裡面都可以用，但是偏偏植物看不懂
 - 如果要轉殖於植物，就需要用到Ti plasmid
 - 根癌農桿菌 (*Agrobacterium tumefaciens*) 會把Ti plasmid感染到植物細胞，隨後該plasmid上面的基因片段-- T-DNA，嵌入到植物基因組
-- T-DNA上的促進植物生長的基音就會讓細胞瘋狂分裂
+- T-DNA上的促進植物生長的基因 (包含Auxin、Cytokinin) 就會讓細胞瘋狂分裂
 - T-DNA也有製造合成**鴉片鹼 (opines)** 的酵素，以當作細菌自己的食物來源。同時，該基因也有一個很神的promoter
 - 然後，一樣的，腦子很靈的科學家就想透過Ti plasmid，以及那很神的promoter，**把抗殺草劑或是控制果實成熟的基因插到裡面去**
 
@@ -1046,26 +1045,26 @@ $$\log(M) = a-b\cdot d$$
 - 同樣的，它通常也有marker，以千道爾頓為單位，顏色多樣
 
 > [!Note]
-> - 簡單來說，把他當成清潔劑，他會把一條一條多肽獨立分開，並且讓所有多肽上都布滿負電荷
-> - 和核酸的電泳一樣，短得多肽跑得快，長得多肽跑得慢 😏
+> - 簡單來說，把SDS當成清潔劑，他會把一條一條多肽獨立分開，並且讓所有多肽上都布滿負電荷
+> - 和核酸的電泳一樣，短得多肽跑得快，長的多肽跑得慢 😏
 
 ![image alt](https://media.geeksforgeeks.org/wp-content/uploads/20240209122237/SDS-PAGE.png)
 
 
-|特性|Agarose|Polyacrylamide|
-|---|---|---|
-|澆灌凝膠|水平|垂直|
-|毒性|無毒|單體有神經毒性|
-|孔洞|大|小|
-|均勻度|較差|非常均勻|
-|解析度|中等|極高|
-|適合分離|大分子DNA|小分子蛋白質<br>或是大分子DNA|
+| 特性   | Agarose (洋菜膠) | Polyacrylamide (聚丙烯胺) |
+| ---- | ------------- | --------------------- |
+| 澆灌凝膠 | 水平            | 垂直                    |
+| 毒性   | 無毒            | 單體有神經毒性               |
+| 孔洞   | 大             | 小                     |
+| 均勻度  | 較差            | 非常均勻                  |
+| 解析度  | 中等            | 極高                    |
+| 適合分離 | 大分子DNA        | 小分子蛋白質<br>或是大分子DNA    |
 
 
 #### 二維凝膠電泳
 - 雖然SDS-PAGE分離多肽挺不錯的，但是這些分離的多肽屬於 "分子量相似"，因此即使在同一個條紋上的多肽，依然是很複雜的混合物
 - 所以有科學家乾脆讓蛋白質跑兩次電泳，而兩次的聚丙烯胺濃度和pH值有所差異，只是這不能用SDS，因此無法分離單一的多肽
-- 因此二為凝膠電泳就是解決這個問題。具體來說就是: 
+- 因此二維凝膠電泳就是解決這個問題。具體來說就是: 
   - 先用細管凝膠做出有pH梯度和電場的環境，讓這些蛋白質在管中走到屬於自己的**等電點 (isoelectric point)** 上
   - 這一步驟又稱為**等電聚焦 (isoelectric focusing)**，通常需要非常強的電壓
   - 然後把該凝膠取出，進行常規的SDS-PAGE
@@ -1107,7 +1106,7 @@ $$\log(M) = a-b\cdot d$$
 - 而elute的方法，通常就是用可以競爭該特異性位點的物質去洗，目的就是破壞特異性連結
 
 ### label tracer
-- 如果只是用紫外光析收或是染料染色，如果RNA或是DNA的數量太少太少，直接用這種方式測量幾乎不可能
+- 如果只是用紫外光吸收或是染料染色，如果RNA或是DNA的數量太少太少，直接用這種方式測量幾乎不可能
 - 因此有人就嘗試用放射標記，例如用可和其互補的probe，並且該probe有放射性同位素，像是... 🐱🐱
 
 #### Autoradiography
@@ -1251,7 +1250,7 @@ timeline
 
 #### automated
 - 進階的Sanger用的是**以不同顏色螢光標記的ddNTPs**，用雷射偵測顏色，電腦自動作色彩峰圖(chromatogram)
-- 也就是說，這些序列是可以放在同一個泳道，在電泳期間，DNA一邊跑，儀器一邊測量
+- 也就是說，這些**序列是可以放在同一個泳道**，在電泳期間，DNA一邊跑，儀器一邊測量
 - 現在進行基因組定序時，sequenators一台裡面有數十甚至數百列泳道，等到每個泳道測定完成後，儀器會自動將結果傳入電腦進行分析
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/sanger_sequencing_with_dye-labeled_segment_0613.png)
@@ -1273,7 +1272,6 @@ $$
 - 一些pyrosequencing是在固向載體上面進行聚合 (例如在bead或是板子上面)
 - 相反，有些是在溶液裡面進行反應
 - 當然，在液相反應裡，所有 dNTP 都在同一池子裡，如果不去除或控制，聚合酶可能會一次加上多個核苷酸，導致 "同步性" 失敗
-
 
 
 #### pyrogram
@@ -1321,6 +1319,8 @@ AAAAAAAA
 AAAAAAAAA
 🙂🙂🙂🙂
 ```
+
+> [!Tip]
 > - 🧍：「額，這到底是 8 個 A 還是 9 個 A？」
 > - 🔬：「嗯……」
 > - 📈：「我看起來覺得是 8.6。」
@@ -1340,7 +1340,7 @@ A[ DNA切成很多小片段，每一個片段用oligonucleotide接頭，adaptor�
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/NGS_Illumina_0330.png)
 
-- 目前的技術已經可以做全基因組定序，不過更多時候，普遍更偏好做全外顯子定序
+- 目前的技術已經可以做全基因組定序，不過**更多時候，普遍更偏好做全外顯子定序**
 - 當然，也可以乾脆做**轉錄組定序 (transcriptome)**
 
 
@@ -1356,7 +1356,7 @@ A[ DNA切成很多小片段，每一個片段用oligonucleotide接頭，adaptor�
      EcoRI
 ```
 
-- 然後你再用BamHI，在另一個是管理裡面，切斷DNA，跑電泳後你得到...
+- 然後你再用BamHI，在另一個試管裡面，切斷DNA，跑電泳後你得到...
 
 ```text
 0---3-------10
@@ -1391,7 +1391,7 @@ A[ DNA切成很多小片段，每一個片段用oligonucleotide接頭，adaptor�
 ### 定點誘變跟蛋白質
 - 也就是透過點突變，改變轉錄出的蛋白質的其中一個胺基酸，看看這個改變會對蛋白質功能造成甚麼影響
 - 例如，Tyr跟Phe的結構只是在苯環上是否有 $-OH$ 基團的差別而已，但是否這個差別就足以影響該酵素活性? 
-- 所以我們試著將質體上的其中一個TAC (Tyr密碼子) 變成 TTA (Phe密碼子)，要做到這種精細度的點突變，我們可以這樣...
+- 所以我們試著將質體上的其中一個TAC (Tyr密碼子) 變成 TTC (Phe密碼子)，要做到這種精細度的點突變，我們可以這樣...
   - 在欲誘變基因的質體上，於限制酶切位點 (例如 5'-GATC'3'，Dpul限制酶切點) 上進行甲基化
   - 然後在加熱分開雙股後，加入引子，該引子要重疊於我們想要改變的密碼子片段
   - 這樣形成的兩個質體會在點突變的區域無法和primer配對成功，形成一個突起
@@ -1493,7 +1493,7 @@ graph LR
 > - 用來作為其他基因調控活性的「readout」。
 
 - 為了測量promoter的活性，我們可以將該promoter連到一個reporter gene上面，例如編碼 $\beta$ -galactosidase、CAT、或是螢光酶 (讓螢火蟲發光的酵素)
-- 然後在promoter下游嵌入該基因時，就可以透過轉錄出的情形的強弱，判斷這promoter的強度，也就是
+- 然後在promoter下游嵌入該基因時，就可以透過轉錄出的情形的強弱，判斷這promoter的強度，也就是:
 
 ```mermaid
 graph LR
@@ -1506,7 +1506,7 @@ H2([weak promoter activity])-->B1(less transcription)-->B2(less reporter express
 - 甚至，也可以用reporter gene，透過替換 "會影響轉譯的基因"，來看看轉譯的效果有沒有改變
 
 ##### 讓我們看看例子...
-- CAT = chloramphenicol acetyltransferase，氯黴素乙醯轉移酶 是一種細菌酵素，最有名的功能是讓細菌對抗生素 chloramphenicol (CAM，氯黴素) 產生抗藥性
+- CAT = chloramphenicol acetyltransferase，氯黴素乙醯轉移酶，是一種細菌酵素，最有名的功能是讓細菌對抗生素 chloramphenicol (CAM，氯黴素) 產生抗藥性
 - 具體就是透過上面加入乙醯基，讓CAM無法結合到核糖體，失去活性
 - 所以基本上就是看看在自顯影畫面上，有多少的acetylated CAM 😗
   - 在質體上移除原本的 gene，並將 **cat gene** 接到原本的 regulatory region/promoter 下游
@@ -1618,7 +1618,7 @@ H2([weak promoter activity])-->B1(less transcription)-->B2(less reporter express
 ### 找到和其他分子有交互作用的RNA
 #### SELEX
 - 全名是 Systematic Evolution of Ligands by EXponential enrichment
-- 首先會轉錄一大堆random DMA，產生一大堆random RNA
+- 首先會轉錄一大堆random DNA，產生一大堆random RNA
 - 然後利用親和性管柱層析，去洗一大堆random RNA，然後把有親和性的RNA反轉錄成cDNA，進行PCR
 - 當得到大量的cDNA後，再進行轉錄一次，然後洗一次，逆轉錄一次，PCR一次，無限循環....
 
@@ -1659,7 +1659,7 @@ B. 我把被破壞的target gene、tk都換給了老鼠 😏
 C. ...我忘了換 😗
 ```
 - 之後，我將這些細胞篩選，加入G418和ganciclovir，此時...
-   - C沒有 $neo^r$ ，當她碰到G418時，就會轉錄出差吋而死亡
+   - C沒有 $neo^r$ ，當她碰到G418時，就會轉錄出差錯而死亡
    - B有 *tk*，這使得他對ganciclovir敏感，死亡
    - **最終只有A留下來**
 
