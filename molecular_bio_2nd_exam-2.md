@@ -594,6 +594,162 @@ flowchart LR
   end
 ```
 
+#### RNAP 也跟 spliceosome 有關??
+- 以前課本常常畫成: 
+
+```text
+DNA → RNA (RNA polymerase) → RNA processing (spliceosome)
+```
+
+- 看起來像是兩個獨立步驟
+- 但實際上在真核細胞裡，**轉錄 (transcription) 跟剪接 (splicing) 幾乎是同步進行的**
+- 關鍵在於: **Rpb1的CTD尾巴**，各位還記得嗎? 就是序列上呈現出: 
+
+```text
+YSPTSPS YSPTSPS YSPTSPS YSPTSPS ...
+😗😗
+```
+
+- 這傢伙不只呈現出轉錄的起始跟延伸，他也是轉錄過程中，重要的「分子施工鷹架」
+- 上面會附著一堆RNA processing蛋白，例如...
+  - capping enzyme
+  - spliceosome相關蛋白
+  - cleavage factors
+  - polyA machinery
+- 都可能被招募到CTD
+
+> [!Note]
+> - 當然，CTD 似乎跟促進 "exon definition" 的剪切有關係，而對 intron definition 似乎沒有影響
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/model_for_participation_of_CTD_in_exon_definition--experiment_made_by_Zeng_and_Berget_1124.png)
+
+
+#### 可變基因剪切
+- 最經典的例子就是抗體 😏
+- Leroy Hood 等人就在 1980 年代做過這種實驗[^2]
+
+[^2]: [doi: 10.1016/0092-8674(80)90617-0](https://doi.org/10.1016/0092-8674\(80\)90617-0)
+
+- 作者研究的是 immunoglobulin $\mu$ heavy chain，也就是抗體的 $\mu$ chain
+- 同一個 $\mu$ gene 可以產生兩種 mRNA...
+  - $\mu m$ mRNA：編碼 membrane-bound μ heavy chain，讓 B cell 表面具有 membrane-bound immunoglobulin
+  - $\mu s$ mRNA：編碼 secreted μ heavy chain，形成可分泌的抗體
+- 論文中， $\mu$ gene 包含以下幾個東西: 
+
+| Exon | 功能  |
+| --- | --- |
+| S   | Signal peptide，負責引導新生蛋白進入 ER |
+| V   | Variable region，抗體可變區 |
+| Cμ1 | Constant domain 1 |
+| Cμ2 | Constant domain 2 |
+| Cμ3 | Constant domain 3 |
+| Cμ4 | Constant domain 4 |
+| 黃色區域 | Secreted μ chain 的特異性 C-terminal coding region |
+| 綠色區域 | Membrane anchor coding region |
+| 紅色區域 | 3′ untranslated region（UTR） |
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/alternative_splicing_pattern_in_the_mouse_immunoglobulin-mu_heavy-chain_gene--experiment_made_by_Leroy_Hood_1124.png)
+
+- 結果發現: 
+  - **Secreted μ mRNA**: 保留黃色 secreted terminus 🟡
+  - **Membrane-bound μ mRNA**: 保留綠色 membrane-anchor exon 🟢
+
+
+| 選項 | Secreted μ | Membrane-bound μ |
+| --- | --- | --- |
+| Cμ1–Cμ4 | 保留  | 保留  |
+| Secreted terminus 🟡 | 保留  | 不作為成熟 mRNA 的 coding region |
+| Membrane anchor 🟢 | 不包含 | 包含  |
+| Poly(A) site | 上游  | 下游  |
+| 最終產物 | 可分泌抗體 | 膜結合型 immunoglobulin |
+
+#### 當果蠅性別會影響時
+> [!Tip]
+> - 果蠅如何透過一連串 sex-specific alternative splicing，讓同一組基因在雌雄個體中產生不同的蛋白質? 
+
+- 最重要的不是某個基因只存在於雌性或雄性，而是：
+
+> Both sexes have the same genes, but they process their pre-mRNAs differently. (同個基因，但是剪切不同) 😗
+
+- 整個調控級聯可以先記成: 
+
+$$\boxed{Sxl \rightarrow tra \rightarrow dsx}$$
+
+- 其中 Sxl 是最上游的性別調控因子，Tra 是中間的 splicing regulator，而 dsx 是下游決定性別特徵的重要 transcription factor
+
+##### 第一層：Sxl（Sex-lethal）
+- Sxl pre-mRNA 有 8 個 exon
+  - 雌性會產生 functional Sxl protein: `1-2-4-5-6-7-8` (exon 3 被切掉)
+  - 雄性則使用 default splicing: `1─2─3─4─5─6─7─8`
+
+> [!Note]
+> - Exon 3 含有 premature stop codon
+> - **雄性最終沒有產生功能性 Sxl protein** 🫠
+
+##### 第二層：tra（transformer）
+- tra pre-mRNA 有四個 exon，轉錄受到 Sxl protein 調控
+  - 雌性果蠅中，Sxl protein 會促進 tra 的 female-specific splicing: `1-3-4` (exon 2 被切掉)
+  - 雄性沒有 functional Sxl，因此 tra 使用 default splicing: `1-2-3-4`
+
+> [!Note]
+> - Exon 2 含有 premature stop codon
+> - **雄性最終沒有產生功能性 Tra protein** 🫠
+
+##### 第三層：dsx（doublesex）
+- dsx pre-mRNA 在雌雄都有表現，但最後產生不同的 mRNA isoforms，受到 Tra protein 影響
+  - 雌性具有 functional Tra，Tra 會與 Tra-2 協同作用，促進 dsx 的 female-specific splicing: `1-2-3-4`
+  - 雄性缺乏 functional Tra，因此 dsx 使用 default splicing: `1-2-3-5-6`
+
+> [!Note]
+> - `1-2-3-4`，轉譯出 **DsxF**，也就是 female-specific Doublesex protein ♀️
+> - `1-2-3-5-6`，轉譯出 **DsxM**，也就是 male-specific Doublesex protein ♂️
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/alternative_splicing_cascade_in_Drosophila_sex_determination--including_Sxl%2C_tra%2C_and_dsx_gene--experiment_made_by_Leroy_Hood_1124.png)
+
+#### 當commitment遇到果蠅
+> [!Tip] 
+> - Tra、Tra2 和特定 SR proteins 合作，形成能讓 dsx pre-mRNA 進入 female-specific splicing pathway 的 commitment complex 😏
+
+- Ming Tian 和 Tom Maniatis 發現，只有 Tra 和 Tra2 還不夠形成穩定的 commitment complex[^3]
+
+[^3]: [doi: 10.1016/0092-8674(93)90298-5](https://doi.org/10.1016/0092-8674\(93\)90298-5)
+
+- 研究者使用一個 in vitro commitment assay，概念流程如下: 
+  - **Preincubation**: 將標記的 dsx pre-mRNA 與 Tra、Tra2，以及特定 SR protein 一起預先孵育
+  - **加入 competitor RNA**: 加入大量未標記、含有 repeat element 的 competitor RNA，試圖捕捉游離的 Tra、Tra2 和其他 RNA-binding factors
+  - **加入完整 nuclear extract**: 提供後續 spliceosome assembly 和 splicing 所需的成分
+  - **分析 splicing products**: 如果原本標記的 pre-mRNA 仍然能完成 female-specific splicing，表示它在 preincubation 階段已形成穩定、能抵抗 competitor 的 commitment complex
+
+> [!Note]
+> - (這跟那Xiang-Dong Fu 做的實驗有87分像阿哈哈 💀🤣)
+
+- 可以發現，rSC35 跟 rSRp55 可以有效促進 dsxCC formation
+- 而 rSRp20 和 rSF2/ASF 在這個 assay 中表現很弱或沒有明顯活性
+- 除此之外，**換成人類 SR proteins** (lane 15-20)，部分 protein 也有和 Tra、Tra2 合作，促進 commitment 的效果
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/commitment_assay_for_female-specific_splicing_of_dsx_pre-mRNA--experiment_made_by_Ming_Tian_and_Tom_Maniatis_1124.png)
+
+### 干擾splicing
+- 有時更高等的真核生物，可以透過蛋白質調控剪切
+- 有時，在同一條DNA上，光是轉錄時用了不一樣的promoter，即使方向相同，最後剪切出的mature mRNA也會不同
+- 這些不同，甚至包含 "exon 內部出現的criptic切點"，以及 retained intron被留在mRNA中
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/alternative_splicing_patterns%2C_coupled_with_alternative_promoters_and_polyadenylation_sites_1124.png)
+
+#### hnRNP
+> [!Tip]
+> - **hnRNP = heterogeneous nuclear ribonucleoprotein (異質性核核糖核蛋白)**
+> - 如果 SR proteins 像是幫忙決定「哪些 splice sites 應該被選中」的調控者，那麼 hnRNP proteins 主要辨認 RNA 上的特定序列，調節 splice-site selection，**有時抑制某些 splice sites 的使用**
+>   - SR protein: 「你們要被切 !!」😎
+>   - hnRNP: 「先不要切。」 🙂
+
+- 舉hnRNP A1 為例，他一共有三種抑制方式: 
+  - **ESS**: A1 偵測並結合到 exon 上的 ESS 序列，進而招募更多 A1，直到它們覆蓋外顯子 (螞蟻嗎? 🙂)
+  - **intronic silencing elements**: A1 偵測並結合到 intron 上的 ISE 位點 (接近 branchpoint)，這讓 U2 snRNP 黏不上去，spliceosome 無法形成
+  - **looping**: 兩個 A1 結合在左右兩個 intron 的 ISE 上，A1 蛋白間產生相互作用，使中間的 exon 形成一個 loop，抑制剪切
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/three_models_for_hnRNP_A1_silencing_of_splicing--including_ESS-binding_ISE-binding_and_exon_looping_1124.png)
+
 
 
 
