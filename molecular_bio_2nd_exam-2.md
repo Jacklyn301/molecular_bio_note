@@ -750,6 +750,509 @@ $$\boxed{Sxl \rightarrow tra \rightarrow dsx}$$
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/three_models_for_hnRNP_A1_silencing_of_splicing--including_ESS-binding_ISE-binding_and_exon_looping_1124.png)
 
+---
+
+## Capping and Polyadenylation
+### what is Capping
+
+> 科學家原本只是想搞清楚「病毒 mRNA 為什麼能被宿主翻譯」，結果意外發現 mRNA 頭上有個奇怪的化學結構... 🤔
+
+- 當時 1970 年代研究很多病毒，尤其是 Vaccinia virus (天花疫苗病毒)
+- 幾組實驗室同時發現...**真核細胞與某些病毒mRNA的5'端都有特殊結構**
+- 代表人物包括：
+  -  Aaron Shatkin
+  -  Yasuhiro Furuichi
+- 他們利用放射性標記，例如 $^3H$ -methyl，去追蹤核酸上的磷酸與甲基
+- 反應完後，把RNA酵素切開分析
+- 圖中的AdoMet，就是 **S-adenosylmethionine (SAM)**，細胞最重要的甲基供體
+- 可以看到主峰正好跑到 $m^7G$ 的位置，代表**用SAM轉移出去的甲基，最後出現在m⁷G上**
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/identification_of_the_capping_substance(X)_as_7-methylguanosine--experiment_made_by_Miura_and_Furuichi_1124.png)
+
+- 研究者把樣品再進一步處理
+- 如果甲基真的在 $m^7G$ 上面，那分離後放射訊號應該跟 $m^7G$ 標準品重疊
+
+#### 所以 m⁷G 是...
+- 一般核酸連接方式: 
+
+```text
+3' → 5'
+```
+
+- 例如: 
+
+```text
+A-p-U-p-G-p-C
+```
+
+- 都是 3'-5' phosphodiester bond
+- 但cap是 m7G(5')ppp(5')N，也就是 5' → 5' 連接
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/reovirus_cap_structure(cap%201)%2C_highlighting_the_charges_1124.png)
+
+#### cap 的出生過程
+
+```mermaid
+flowchart TB
+RNA([RNA<br>pppXpY])-->|RNA<br>triphosphotase<br>去除gamma磷酸|ppXpY([ppXpY])-->|guanylyl<br>transferase<br>+GTP|GpppXpY([GpppXpY])-->|methyl<br>transferase<br>+ Me|1M([m⁷GpppXpY])-->|methyl<br>transferase<br>+ Me|2M([m⁷GpppXmpY])
+
+GTP((GTP))-.->GpppXpY
+GpppXpY-.->PPi((PPi))
+
+Ado1((Ado-<br>Met))-.->1M
+Ado2((Ado-<br>Met))-.->2M
+
+```
+
+#### 帽子的功能有很多種，四大重點: 
+
+> [!Important]
+> - [ ] 避免 pre-mRNA 被 nuclease 分解
+> - [ ] 讓轉譯變得更有效
+> - [ ] 幫助成熟的 mRNA 出核
+> - [ ] 幫助 RNA splicing，尤其是針對第一個 intron 
+
+- 帽子通常在轉錄早期，mRNA 不到 30 nt 長的時候，就加上去了 😎
+
+#### 沒有帽子的下場?
+- 從底下 a 圖可以看到，縱軸是 Total labeled RNA，代表**總 Reovirus RNA 分布**
+- 可以看到三組，**capped (green), blocked (blue), or uncapped (red)** 曲線幾乎疊在一起
+- 並且標示三個峰值，這代 表RNA 片段的大小，也就是 **large (l), medium (m), and small (s)**
+- 這表示: **RNA 本身都有正常合成出來**，所以問題不是 RNA 沒做出來
+
+> [!Note]
+> - 此處的 blocked，就是cap不是原本的 $m^7$ GpppG，而是**沒有甲基化，但是連結還是 5'→5' 的 GpppG**
+
+
+- 這三種RNA之後打進爪蟾的卵母細胞中，給裡面的 nuclease 分解看看，結果，這三個RNA裡面，死最嚴重，碎片最多的就是 uncapped 的 (那紅箭頭像是股市一樣一飛沖天 🤣)
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/effect_of_cap_on_reovirus_RNA_stability_in_Xenopus_oocyte--experiment_made_by_Furuichi_1124.png)
+
+#### 當碰上轉譯
+> [!Tip]
+> - CAP 與 Poly-A 可增進轉譯的效力 😏
+
+- CAP 跟 Poly-A 之間，增加轉譯的能力，是有**協同作用 (synergism)** 的
+- 單純只有加 Poly-A 跟 CAP (下圖)，其實能增加轉譯，只是效果不高
+- 但是當有了雙方的幫忙時，轉譯提升的能力突然多了幾百倍 (核糖體成精?? 💀)
+- 當時 Daniel Gallie 做實驗時，看基因表現量的方式，利用的是螢火蟲的冷光酶 (Luciferase)，經過加 poly-A、Cap (或是不加)，打入菸草裡面 (菸草發光?? 🙂)
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/synergism_between_poly-A_and_Cap_during_translation_of_Luciferase_mRNA_in_tobacco_protoplasts--experiment_made_by_Daniel_Gallie_1124.png)
+
+> [!Tip]
+> ##### mRNA 怎麼變成甜甜圈了？ 🍩
+> - eIF4E 是專門認 cap 的蛋白
+> - 同時，PABP (poly-A-binding protein)，負責抱住 Poly-A tail
+> - eIF4G 是個 scaffold protein，同時可以抓住 eIF4E 跟 PABP
+> - 因此這讓 mRNA 形成套索結構，也就是 Closed-loop mRNA model
+> - 如果 mRNA 變甜甜圈，核醣體可以轉譯一圈再回到起點 (ribosome recycling)
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/cap-poly-A_interaction_with_PABP-elF-4G-elF-4E_trigger_looping_of_mature_mRNA_that_enhance_translation_efficiency_1124.png)
+
+#### Transport of RNA
+- Hamm and Mattaj 又拿了非洲爪蟾，把他的U1 snRNA 基因置於人類的 U6 snRNA promoter，也就是: 
+
+```text
+--|U6-snRNA-pro (human)|---|U1 snRNA gene (xenopus)|--
+🙂🙂
+```
+- 他們這樣做，是為了讓 RNAP III 可以轉錄該基因 (原本的 U1 snRNA 是由 RNAP II 轉錄)
+- 同時，他們還加了 $\alpha$ -amanitin，讓RNAP II被抑制
+- 因此，他們就是比較了兩個狀況: 
+  - 有 cap，promoter 接觸 RNAP II 的 U1
+  - 沒 cap，promoter 接觸 RNAP III 的 U1
+- 結果，沒cap的那一組，U1 snRNA 全部都留在細胞核裡面
+
+> [!Important]
+> - 5'-cap 可以協助 mRNA 出核 😏
+> - 利用 cap-binding protein 招募 transcription-export complex，送出核孔複合體
+
+<iframe src="https://Jacklyn301.github.io/molecular_model/9F67_Trypanosoma%20brucei%20nuclear%20cap-binding%20complex%20(CBC)%20bound%20to%20cap4.html" width="100%" height="600px"></iframe>
+
+### polyadenylation
+- James Darnell 等人在1973年，利用癌細胞 (HeLa cell) 純化 poly-A tail
+- 他們將這個預測**長度約為 200 nt 的 AMP**，稱為 "poly-A tail"
+- 它們用兩種enzyme: 
+  - RNase A (切C跟U)
+  - RNase T1 (切G)
+- 把hnRNA (核內RNA) 跟 mRNA (核外RNA) 切碎成 **"poly-A + 一堆碎片"** 然後做離心看沉降係數
+- 圖中7S的長區段，被研究者推測大概就是200 nt左右
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/size_of_poly-A_is_about_7S--experiment_made_by_Sheiness_and_Darnell_1125.png)
+
+- poly-A 並不是由 RNAP 合成出來的，因為基因裡面並未有200 nt長的 "poly-T 結構"
+- 事實上，poly-A 是在 mRNA 合成後，由 **poly-A polymerase (PAP)** 形成的
+- 在 mammalian mRNA 中，最典型的 polyadenylation signal 是：
+
+$$\boxed{5'-AAUAAA-3'}$$
+
+- 它通常位於 cleavage site 上游約 10–30 nucleotides
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/polyadenylation_complex_recognize_AAUAAA_signal_and_cleavage_the_mRNA_1125.png)
+
+- **CPSF**
+  - Cleavage and Polyadenylation Specificity Factor
+  - 其中 CPSF30 和 WDR33 等 subunits 參與 AAUAAA 訊號辨識
+- **CST**
+  - Cleavage Stimulation Factor
+  - 其中 CstF64 可以辨認 cleavage area 下游的 GU-rich region
+- 這兩個 complex 協同作用，協助定位 cleavage area
+
+##### Cleavage 發生在哪裡? 
+- 假設 pre-mRNA 有以下排列：
+
+```text
+5′ ─── AAUAAA ─── 10–30 nt ─── CA ↓ ─── GU-rich region ─── 3′
+                                    ↑
+                               Cleavage site
+😗😗                               
+```
+
+- 常見的 cleavage site 位於 CA dinucleotide 附近，切割後...
+  - 上游 RNA: 保留作為 mature mRNA，接著加上 poly-A tail
+  - 下游 RNA: 通常由 XRN2 exonuclease 降解。
+    
+
+> [!Tip]
+> - **Polyadenylation 和 transcription termination 是互相耦合的**
+> - 下游 RNA 被切開後，RNAP II 仍可能繼續轉錄一段距離，之後 XRN2 從新產生的 5′ end 開始降解下游 RNA，並有助於促進 RNAP termination
+> - 這稱為 **torpedo model** 😏
+
+
+| 區域  | 位置  | 功能  |
+| --- | --- | --- |
+| Poly-A signal (PAS) | Cleavage site 上游 | 招募 CPSF |
+| Cleavage area | 通常在 PAS 下游約 10–30 nt | RNA 被切開的位置 |
+| Downstream sequence element | Cleavage area 下游，常富含 GU/U | 招募 CST |
+
+
+
+#### poly-A 功能東西必考，務必記得...
+
+> [!Important]
+> - [ ] 保護 pre-mRNA 避免其降解
+> - [ ] 增加轉譯的效率
+> - [ ] 促進 polysome (多核糖體) 的生成
+> - [ ] 幫助剪切，尤其是最後一個 intron 的 splicing
+> - [ ] 幫助 mRNA 的運輸
+
+#### 增加穩定度
+- Michel Revel 等人透過在非洲爪蟾的卵母細胞中注射 "有poly-A" 跟 "沒有poly-A" 的球蛋白 mRNA，看看情況
+- 結果發現，六個小時過後，沒有 poly-A 的 mRNA 無法再支持轉譯 (產生的球蛋白減少)
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/time_course_of_translation_of_poly-A-plus_(blue)_and_poly-A-miuns_(red)_globin_mRNA--experiment_made_by_Michel_Revel_1125.png)
+
+#### 增加轉譯
+- 真核生物裡面有一個蛋白叫做 poly-A-binding protein I (PAB I)，如果大家還記得那個 mRNA 變成甜甜圈的假說，那應該還記得這傢伙
+- 它被認為是促進轉譯的參與角色之一
+- Munroe and Jacobson 透過 poly-A 跟 cap 的有無，分別測量了四種情況的基因表現量，結果發現，**poly-A + cap 增加最多轉譯**
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/effect_of_polyadenylation_and_capping_on_translatability_of_mRNAs--experiment_made_by_Munroe_and_Jacobson_1125.png)
+
+#### polysome 增加
+- Munroe and Jacobson 利用 $^{32}P$ 標記有 poly-A 的 mRNA 🔵，用 $^3 H$ 標記沒有 poly-A 的 mRNA 🔴，並且跟兔子的 reticulocyte (未脫核的紅血球) 混合，並做蔗糖梯度離心
+- 離心出來的mRNA 上面是掛著核糖體的，圖中，越左側的峰值，代表掛的核糖體越多
+- 箭頭右側的區域，是只有掛一顆，甚至沒有核糖體的區域。可以發現 🔴 的最高峰值就落在這裡 (that is，多數沒有 poly-A 的 mRNA 上面都沒有掛核糖體)
+- 相較於 🔴 ，🔵 相對來說，掛的核糖體更多，峰值更偏向左側，也代表 polysome 的比例更高
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/effect_of_polyadenylation_on_recruitment_of_mRNA_to_polysomes--experiment_made_by_Munroe_and_Jacobson_1125.png)
+
+
+
+#### poly-A 形成的 mechanism
+- 在剛剛的圖中有看到，在轉錄幾乎快完成之後，會在 GU-rich region 上游一點點的地方切一刀
+- 此時，切點上游的地方是我們要保留的，下游會進一步被分解 (XRN2 exonuclease)
+- 上游保留的mRNA會在3' 加上 poly-A tail
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/overview_of_the_polyadenylation_process--including_cleavage_of_mRNA_degradation_and_polyadenylation_1125.png)
+
+#### 來看看實驗
+> [!Tip]
+> - Q: RNA polymerase II 到底是在遇到 poly(A) signal 時就停止轉錄，還是會繼續往下走？
+> - A: **它會繼續轉錄，甚至越過 poly-A cleavage site**
+
+- Erhard Hofer and James Darnell 利用 DMSO-stimulated Friend erythroleukemia cells
+- 這是一種可以經由 DMSO 刺激而進行血球分化的細胞模型，globin gene 的表現會增加
+- 實驗流程: 
+  - 從細胞中分離 nuclei
+  - 加入 radioactive $[^{32}P]UTP$ 
+  - 已經在 DNA 上工作的 RNAP 繼續延伸 nascent RNA
+  - 分離並取得被標記的 RNA
+  - 將 RNA 分別與 DNA fragments A–F 雜交
+  - 測量各個 DNA fragment 能夠捕捉到多少標記 RNA
+
+> [!Note]
+> ##### 所謂的 hybrid
+> - 研究者將整段 DNA 分成 A–F 六個 fragments
+> - 這樣就能問: **哪些區域有正在延伸的 RNA polymerase?**
+
+- 可以發現，**B–F 這些區域都有相當程度的 nascent RNA transcription activity**
+- 尤其 **E、F 很重要，因為它們位於 poly-A site 下游 !**
+
+> [!Tip]
+> - 結論: Poly-A site 下游仍有 transcription activity 😏
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/transcription_beyond_the_polyadenylation_site--experiment_made_by_Hofer_and_Darnell_1125.png)
+
+### 加尾的切割: a closer look
+#### AAUAAA 的重要性
+> [!Tip]
+> - Polyadenylation signal 的六個 nucleotide，到底有多嚴格？如果把其中一個 nucleotide 換掉，polyadenylation efficiency 會下降多少？
+
+- Marvin Wickens[^4] 製備不同版本的 polyadenylation signal，使用多個突變體 (在原本的AAUAAA上面做單一核甘酸替換)
+
+[^4]: [doi: 10.1016/0968-0004(90)90054-F](https://doi.org/10.1016/0968-0004\(90\)90054-F)
+
+- 接著使用 RNA processing assay，觀察這些 RNA substrate 能不能正常進行 cleavage 和 polyadenylation
+
+$$\text{Mutate PAS} \longrightarrow \text{Measure polyadenylation efficiency}$$
+
+- 如果某個 mutation 讓效率大幅下降，就表示該位置對 polyadenylation 很重要
+- 可以發現，**不同位置的 nucleotide substitution，對 polyadenylation 的影響並不相同**
+  - 例如 AUUAAA 仍然具有很高的效率
+  - 某些其他 substitutions 會讓效率大幅降低
+- 這也解釋了為什麼 mammalian PAS 不只有 AAUAAA，還有 AUUAAA 這類 functional variants
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/summary_of_data_on_369_vertebrate_polyadenylation_signals--experiment_made_by_Marvin_Wickens_1125.png)
+
+##### 上面那一串是甚麼
+- 圖中列出...
+
+$$A^{98}A^{86}U^{98}A^{98}A^{95}A^{96}$$
+
+- 這些數字表示各個位置對應 nucleotide 的高度保守程度: 
+  - 第一個位置：98% 是 A
+  - 第二個位置：86% 是 A
+  - 第三個位置：98% 是 U
+  - 第四個位置：98% 是 A
+  - 第五個位置：95% 是 A
+  - 第六個位置：96% 是 A
+
+#### 改變poly-A signal 的情況
+- Fitzgerald and Shenk 利用 SV40 病毒的基因做了幾個突變或是修改的地方: 
+  - **Mutant 1471**: 在原本 AAUAAA 的下游 240 bp 的地方，多了一個 AAUAAA 序列，該序列接近 map unit 0.19
+  - **Mutant 1474**: 保留下游編輯的 AAUAAA，但是刪除原本的 poly-A signal
+  - **Mutant 1475**: 原本樣，AAUAAA 信號在接近 map unit 0.14 的地方
+- 重點在1~4 lane 的地方，證明了 AAUAAA 的刪除，會讓該區無法poly-A 化
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/importance_of_the_AAUAAA_sequence_to_polyadenylation--experiment_made_by_Fitzgerald_and_Shenk_1125.png)
+
+#### Cleavage and Polyadenylation of a Pre-mRNA
+> [!Tip]
+> - CTD 對切割重不重要? 🤔
+
+- Hirose and Manley 以 $^{32}P$ 標記腺病毒 L3 前體 mRNA，以及IIa、IIo 聚合酶 (有無磷酸化)、還有相關的因子 (CPSF、CstF、CFI、CFII、PAP) 等等一起反應
+- 可以發現，**隨著IIa、IIo濃度增加，它們都能切割成對應的 5' 跟 3' 片段**
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/effect_of_RNA_polymerases_IIA_and_IIO_on_pre-polyadenylation_mRNA_cleavage_in_vitro--experiment_made_by_Hirose_and_Manley_1125.png)
+
+- 接下來，他們想看看，單純加入有 CTD 的融合蛋白，是否有用，並且區分成 "有磷酸化的 CTD" 跟 "沒有磷酸化的 CTD"
+- 同時，再做一個實驗，比較如果加入 IIB 類型的 RNAP，會發生甚麼事
+- 結果發現，磷酸化的 CTD，比沒有磷酸化的更能促進切割
+- 同時，無論濃度多少，切割掉 CTD 的IIB，無法促進切割
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/effect_of_the_Rpb1_CTD_on_pre-polyadenylation_mRNA_cleavage_in_vitro--experiment_made_by_Hirose_and_Manley_1125.png)
+
+#### CPSF
+- Keller 把 PAP 跟 CPSF ，還有短的寡核甘酸混合進行反應 (其中對照組無任何蛋白質)
+  - wild type: poly-A signal 為 **AAUAAA**
+  - mutant: poly-A signal 為 **AAGAAA**
+- 可以發現，隨著 CPSF 濃度升高，**CPSF 可以跟 wild type 形成 complex**
+- SDS-page電泳呈現出來，主條帶出現在 35kD 跟 160kD 處
+
+> [!Note]
+> - CPSF **可以結合，而且只結合 AAUAAA** 😏
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/CPSF_binds_to_the_AAUAAA--Gel_mobility_shift_assay_and_SDS-PAGE--experiment_made_by_Keller_and_colleagues_1125.png)
+
+#### 整個precleveage complex
+- **CPSF: Cleavage and Polyadenylation Specificity Factor**
+  - 整個反應的核心
+  - CPSF先坐上去 AAUAAA，**可以把它想成 🎯 定位員**
+  - CPSF73是真正的內切核酸酶 (endonuclease)，**也就是 ✂️ 剪刀本人**
+- **CstF: Cleavage stimulation factor**
+  - 負責看下游 GU-rich sequence
+  - 和 CPSF 一起夾住 RNA，幫助定位
+- **CFI: Cleavage Factor I**
+  - 辨認 UGUA motif
+  - 影響 Alternative Polyadenylation (APA)
+  - 也就是**同一條 pre-mRNA 可以選不同的位置加尾巴**
+- **CFII: Cleavage Factor II**
+  - 參與 cleavage reaction
+  - 並且跟**轉錄終止**有關
+- **PAP: poly-A polymerase**
+  - 幫忙加尾巴
+  - PAP 不需要模板，完全是自己加的，所以屬於 **template-independent polymerase**
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/a_model_for_the_precleavage_complex--adapted_from_Wahle%2C_E._and_W._Keller_1125.png)
+
+<iframe src="https://Jacklyn301.github.io/molecular_model/6URO_Cryo-EM%20structure%20of%20human%20CPSF160-WDR33-CPSF30-PAS%20RNA-CstF77%20complex.html" width="100%" height="650px"></iframe>
+
+#### PABP
+- PABP，也就是 **Poly-A-binding protein**
+- 一開始 PAP 加得很慢...
+
+```text
+AAAA...
+🙂💀
+```
+
+- 之後 PABP 黏上來，PABP 會刺激 PAP 加快合成，於是尾巴迅速長大...
+
+```text
+AAAAAAAAAAAAAAAAAAAAAAAAAA...
+😏
+```
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/model_for_polyadenylation--including_CPSF(blue)_CstF(brown)_CFI_and_II(gray)_PAP(red)_and_PABII(yellow)_1126.png)
+
+#### 小整理 🐱
+
+| 蛋白  | 工作  |
+| --- | --- |
+| CPSF | 找 AAUAAA |
+| CPSF73 | 真正剪 RNA |
+| CstF | 找 GU-rich sequence |
+| CFI | 找 UGUA，決定剪哪裡 |
+| CFII | 協助切割、終止轉錄 |
+| PAP | 加 poly(A) |
+| PABP | 幫 PAP 衝速度 |
+
+### 細胞質的狀況
+#### mRNA 的 poly-A turnover
+- 細胞核裡，poly-A 是以「合成」為主
+- 細胞質裡，則進入另一套動態平衡，deadenylase會把尾巴慢慢啃短
+- 主要是這些 deadenylase: 
+  - **CCR4-CAF1 complex**
+  - **PAN2-PAN3 complex**
+- 在細胞質裡面，poly-A turnover 現象會發生
+- 會出現...
+
+```text
+去腺苷化
+(deadenylation)
+
+AAAAAA → AAAA → AA
+```
+
+- 然後又有細胞質 PAP 重新補長
+
+```text
+AA → AAAAAAAA
+```
+
+> [!Tip]
+> ##### 🍜 吃麵大賽
+> - **外送員(PAP)**: 一直加麵 🙂🙂
+> - **客人(RNase)**: 一直吃麵 😗😗
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/roles_of_PABP1_in_regulating_mRNA-specific_mRNA_turnover_1126.png)
+
+- 當 poly-A tail 短到一定程度時，PABP (細胞質那個 PABPC) 開始坐不穩了
+- 原本 mRNA 產生的甜甜圈就會消失
+- 最後導致 decapping (把 5' cap 拔掉)
+- 接著...
+  - XRN1 從 5'→3' 開吃
+  - exosome 從 3'→5' 開吃
+- mRNA 就被判死刑了 💀
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/shortening_of_cytoplasmic_poly-A--experiment_made_by_Sheiness_and_Damell_1126.png)
+
+- 圖的邏輯
+  - 藍線 = 5S rRNA marker (約 190 nt，已知)
+  - 綠線 = Nuclear RNA
+  - 紅線 = Cytoplasmic RNA
+- 而 x 軸標的是 gel slice，越往左，代表 poly-A 越長
+
+> [!Note]
+> - **紅線相對於綠線往右偏移**，代表 mRNA 一進細胞質後，poly-A 就開始被 deadenylase 慢慢修剪 🐱
+
+#### 實驗又來了
+> [!Tip]
+> - **progesterone 如何促進特定 mRNA 的 cytoplasmic polyadenylation（細胞質多聚腺苷酸化）**
+
+- 研究者使用 *Xenopus* oocytes，注入兩種帶有 radioactive label 的 synthetic RNA
+  - **D7**：來自 *Xenopus* mRNA 的 3′ fragment，正常情況下會發生 maturation-specific polyadenylation
+  - **SV40**：來自 SV40 mRNA 的 3′ fragment，**不會發生**這種 progesterone-stimulated polyadenylation。
+- 接著用 progesterone 刺激 oocyte maturation，觀察 RNA 的 poly-A tail 是否變長
+- 看 D7 的 lanes 1–5...
+  - **Lane 1(−P)**：沒有 progesterone，主要是較短的 RNA
+  - **Lane 2(+P)**：加入 progesterone 後，出現明顯往上移動的 RNA band
+    
+
+> [!Note]
+> - 這表示 D7 RNA 在 progesterone stimulation 後，發生了poly-A tail elongation
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/maturation-specific_polyadenylation_of_two_RNAs_with_or_without_the_stiumlation_of_progesterone--experiment_made_by_Wickens_and_colleagues_1126.png)
+
+#### cytoplasmic polyadenylation element (CPE)
+- **它是一段位於 mRNA 3′ UTR 的 cis-regulatory RNA sequence，能夠調控 cytoplasmic polyadenylation**
+- 典型的 CPE 是一段富含 uridine 的 RNA sequence，常見 consensus motif 為：
+
+$$\boxed{5'-UUUUUAU-3'}$$
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/refs/heads/main/CPEB_bind_to_CPE_and_promote_maturation_specific_polyadenylation_mRNA_in_cytosol_1126.jfif)
+
+- 當 Wickens 等人又用 mRNA 做實驗時，他們做了兩種mRNA: 
+  - A: 有 CPE 跟 AAUAAA 的 mRNA
+  - B: 只有 AAUAAA 的 mRNA
+- 然後透過有無加入 progesterone，觀察 poly-A tail 有沒有增長
+- 可以發現，A 響應 progesterone 的刺激，而 B 沒有影響
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/demonstration_that_UUUUUAU_confers_maturation_specific_polyadenylation--experiment_made_by_Wickens_and_colleagues_1126.png)
+
+### Coordination of mRNA Processing Events
+> [!Tip]
+> CTD 到底全程在幹嘛? 🤔
+
+- 目前假說認為是這樣的...
+  - RNAP 先合成 nascent RNA 時，剛開始的 CTD 磷酸化，會招募 capping complex，也就是說，一合成RNA時，就已經開始加帽
+  - 接下來，RNA 在延伸時，CTD 磷酸化的變化 (serine 5 to serine 2)，會招募剪切複合體，這主要是define exon 為主，切除intron
+  - 磷酸化最後，招募 polyadenylation complex，切斷RNA，並且加上尾巴
+- 這些控制，被認為都是跟CTD的磷酸化變化有關 !!
+
+<iframe src="https://Jacklyn301.github.io/note_of_selflearning/RNAP%20II-CTD%20phosphorylation--RNA%20processing.html" width="100%" height="880px"></iframe>
+
+#### 當 RNAP 其實是個瞎子...
+- AAUAAA 所引發的 cleavage/polyadenylation machinery 參與了 Pol II 的終止(termination)
+- RNA 被剪開對於終止本身非常重要，因為剪切後，RNA 還有一段掛在 Pol II 上
+- 這段殘餘 RNA 沒有 5' cap 保護
+
+##### Torpedo model (魚雷模型) 🔫
+
+- 5'→3'外切酶**Xrn2** (酵母叫 Rat1)，開始從新產生的 5'端一路吃，像是魚雷一樣追著跑
+- 一直到最後追上，轉錄終止
+- 所以要記得，**the mature 3’-end of mRNA ≠ the termination site of hnRNA**
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/torpedo_model_for_transcription_termination_in_the_human_beta-globin_gene_1126.png)
+
+#### 實驗開始
+##### type a
+- 研究者比較兩種構築: 
+  - **pGCYC1**: 正常的 wild-type CYC1 gene，具有正常的 polyadenylation site
+  - **pGcyc1-512**: 缺失 CYC1 polyadenylation site 的 mutant
+- 觀察結果: 
+  - Wild-type 的 CYC1 transcript 有明顯訊號
+  - Mutant 的 CYC1 transcript 訊號明顯降低 
+  - ACT1 作為 control，兩組訊號相近。
+- 這表示 polyadenylation site 被移除後，CYC1 mRNA 的累積量下降
+
+##### type b
+- **設計 run-on assay**: 研究者將 yeast CYC1 gene 放在強力的 GAL1/10 promoter 下游，然後把基因區域分成六個 DNA 片段，供後續 hybridization 使用
+- 其中，Poly-A site 位於 fragment 2 與 fragment 3 的交界附近
+  - 如果 RNAP II 在 poly-A site 附近正常終止，那麼越過這個位置的下游片段，就不應該持續出現大量 run-on signal
+  - 反過來，如果 polymerase 沒有正常終止，就可能繼續轉錄下游DNA
+- 結果發現: 
+  - **Wild-type pGCYC1**: fragment 1、2、3 有訊號，fragment 4、5、6 沒有明顯訊號。也就是說，wild-type CYC1 有正常的轉錄終止
+  - **Mutant pGcyc1-512**: 六個 fragments 全部有訊號，即使遠離原本的 poly-A site，仍然可以偵測到 nascent transcription
+    
+
+> [!Tip]
+> - 這表示缺少 polyadenylation site 後，RNA polymerase II 會繼續往下游轉錄，出現 **transcriptional readthrough**
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/linkage_between_polyadenylation_and_termination_of_transcription--experiment_made_by_Proudfoot_and_colleagues_1126.png)
+
+
 
 
 
