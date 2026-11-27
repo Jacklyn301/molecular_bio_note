@@ -849,6 +849,8 @@ Ado2((Ado-<br>Met))-.->2M
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/cap-poly-A_interaction_with_PABP-elF-4G-elF-4E_trigger_looping_of_mature_mRNA_that_enhance_translation_efficiency_1124.png)
 
+<iframe src="https://Jacklyn301.github.io/molecular_model/5T46_Crystal%20structure%20of%20the%20human%20eIF4E-eIF4G%20complex.html" width="100%" height="600px"></iframe>
+
 #### Transport of RNA
 - Hamm and Mattaj 又拿了非洲爪蟾，把他的U1 snRNA 基因置於人類的 U6 snRNA promoter，也就是: 
 
@@ -1251,6 +1253,301 @@ $$\boxed{5'-UUUUUAU-3'}$$
 > - 這表示缺少 polyadenylation site 後，RNA polymerase II 會繼續往下游轉錄，出現 **transcriptional readthrough**
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/linkage_between_polyadenylation_and_termination_of_transcription--experiment_made_by_Proudfoot_and_colleagues_1126.png)
+
+---
+
+## Other RNA processing
+### Trans-Splicing
+> [!Tip]
+> - **Cis-splicing**：同一條 pre-mRNA 上的 exon 被接在一起
+> - **Trans-splicing**：來自不同 RNA 分子的 RNA segments，被接合成同一條成熟 RNA
+
+- 反是剪切第一次是在錐蟲 (trypanosomes) 身上發現的
+- 在錐蟲身上的蛋白中，研究員嘗試將5'的序列進行定序，發現蛋白質跟實際基因並不匹配
+- 它們都有一段剪切前導序列 (SL) ，而且這個基因是獨立編碼，而不是存在在某個大基因裡面
+- 但是，所有mRNA都有SL，甚至位於不同染色體的mRNA，也有SL序列
+- 這在 Trypanosoma 特別重要，因為它們的基因常以 polycistronic transcription 方式轉錄，trans-splicing 參與產生個別成熟 mRNA
+
+#### Y-shape 中間體
+- **Y-shaped intermediate 不是單純為了教學方便畫出來的假想結構**。它是 trans-splicing 反應機制中提出、並且有實驗研究支持的 RNA intermediate
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/detailed_trans-splicing_scheme_for_a_trypanosome_mRNA_1127.png)
+
+##### 實驗開始
+- 研究對象是 Trypanosoma brucei，研究者想知道：成熟 mRNA 的 5′ spliced leader（SL）究竟如何接到另一條 pre-mRNA 上？
+- 他們做了幾件事：
+- **① S1 nuclease analysis**
+  - 偵測到一段約 100 nt 的 SL RNA-derived fragment
+- **② Northern blot**
+  - 這段 100 nt RNA 並沒有以 free RNA 的形式存在於細胞中
+  - 這很重要，代表它可能被連接在其他 RNA 上
+- **③ Debranching enzyme treatment**
+  - 研究者使用 **debranching enzyme** 處理 RNA，結果釋放出一段約 100 nt 的 RNA
+  - 這個結果支持原本的 RNA 透過 branch structure 連接在一起，而且連接方式涉及特殊的 2′–5′ phosphodiester bond
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/treating_hypothetical_splicing_intermediates_with_debranching_enzyme_1127.png)
+
+- 1988 年，Ralph、Huang 和 Van der Ploeg 發表另一篇研究
+- 他們利用 denaturing two-dimensional PAGE，實際分離出約 180–300 nt 的 Y-shaped branched RNA molecules
+- 這些 RNA 包含：
+  - 約 105 nt 的 medRNA-derived intron
+  - 與它透過 2′–5′ bond 連接的另一段 RNA
+
+> [!Note]
+> - 因此，**Y-shaped intermediate 有實際的 biochemical evidence 支持，不只是根據反應機制推導出來的圖**
+
+
+### RNA Editing
+> [!Tip]
+> - 更直接地改寫 RNA 的 nucleotide sequence
+
+#### Kinetoplast 是什麼
+- 圖中的是 *Leishmania tarentolae* 的 **kinetoplast**，也就是動基體
+- 它是 kinetoplastid protozoa 粒線體內非常特殊的 DNA 結構
+  - **Maxicircles**：較大的環狀 DNA，包含粒線體蛋白質編碼基因，例如 COX I
+  - **Minicircles**：較小的環狀 DNA，主要攜帶 guide RNA（gRNA）的基因
+- 這些環狀 DNA 彼此互相連接（catenated），形成非常密集的 DNA network
+- 圖片上方那些看起來像一團糾結毛線的東西，就是 kinetoplast DNA network
+
+#### COX II 的 DNA 和 RNA 序列為什麼不一樣
+- RNA 中有 4 個 U，無法在原始 DNA sequence 中找到對應的 T
+- 正常 transcription 是...
+
+$$DNA \longrightarrow RNA$$ 
+
+- DNA 的 T 對應 RNA 的 U，這只是正常的 transcription
+- 但這裡不同：**成熟的 COX II mRNA 比原始 DNA template 多出 4 個 U residues**
+- 因此，這不是 DNA 序列直接決定的結果，而是 transcription 之後，RNA 又經歷了 nucleotide insertion
+- 這也被稱為 **U-insertion RNA editing**
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/kinetoplast_minicircles_and_maxicircles_from_Leishmania_tarentolae_and_comparison_of_the_sequence_of_part_of_the_COXII_gene_of_a_trypanosome_with_its_mRNA_product_1127.png)
+
+> [!Note]
+> - *Leishmania tarentolae* 的 **COX II gene 原始序列存在一個框移問題**。透過插入 4 個 U，mRNA 的閱讀框得以恢復，讓它可以產生正確的 COX II protein
+> - Shaw et al.（1989）研究發現，COX II mRNA 的四個 U insertion 能修正原本的 −1 reading-frame shift，並取得了該編輯過後的轉錄體可能被翻譯成蛋白質的初步證據
+
+#### edit direction
+> [!Tip]
+> - **Trypanosoma 的 mitochondrial RNA editing，到底是從 mRNA 的哪一端開始？** 🤔
+> - 答案是 3′ → 5′ RNA editing
+
+- 研究對象是 *Trypanosoma brucei* 的 mitochondrial COIII transcript
+- 研究者設計兩組 primer: 
+  - **5′ primer**：辨認 COIII mRNA 5′ 端的序列
+  - **3′ primer**：辨認 COIII mRNA 3′ 端的序列
+- 每一端又各有兩種版本：
+
+| Primer | 意義  |
+| --- | --- |
+| E   | 編輯過的序列 primer |
+| U   | 未編輯過的序列 primer |
+
+- 也就是說，primer 能不能成功 anneal，取決於 RNA 的那一端是否已經完成 editing
+- 結果 lane 1~4 的 **Wild-type cells**...
+
+| Lane | 5′ primer | 3′ primer | 結果  |
+| --- | --- | --- | --- |
+| 1   | E   | E   | 有 band |
+| 2   | E   | U   | 無 band |
+| 3   | U   | E   | **有 band** |
+| 4   | U   | U   | 無 band |
+
+- 根據lane 3，5′ end 尚未完成 editing， 3′ end 已經完成 editing
+- 換句話說，RNA 可以處於「3′ 已編輯、5′ 尚未編輯」的中間型態
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/PCR_analysis_of_direction_of_editing--experiment_made_by_Stuart_and_colleagues_1127.png)
+
+#### guide RNA
+> [!Tip]
+> - **誰決定要插入 U**? guide RNA 😏
+
+- 基本流程如下: 
+
+```mermaid
+timeline
+    title Guide RNA-directed RNA Editing
+
+    section Initial recognition
+      (a) Hybridization : gRNA-I 與 pre-mRNA 配對
+                        : 建立互補的 RNA duplex
+
+    section First editing cycle
+      (b) Editing : Editosome 執行 RNA editing
+                  : 在 mRNA 中加入 U residues
+                  : 形成第一段 edited region
+
+    section Next guide RNA
+      (c) Hybridization : gRNA-II 與新形成的 edited region 配對
+                        : 提供下一階段的 editing information
+
+    section Second editing cycle
+      (d) Editing : Editosome 再次執行 RNA editing
+                  : 延伸 edited region
+
+    section Progressive editing
+      (e) Repeat : 重複 gRNA hybridization 與 editing
+                  : 逐步完成整段 RNA editing
+                  : 產生 mature edited mRNA
+
+```
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/model_for_the_role_of_gRNAs_in_editing_1127.png)
+
+> [!Note]
+> - gRNA 不只是告訴 editosome「這裡要編輯」，它還提供了決定插入幾個 U 的 sequence information
+
+### Post-Transcriptional Control
+> [!Tip]
+> - **細胞不只可以控制 "製造多少 mRNA"，還可以控制 "已經製造出來的 mRNA 能活多久"**
+
+- **Casein** 是乳汁中的主要蛋白質之一。乳腺細胞需要大量表現 casein genes，才能製造 casein proteins
+- 而後來發現，泌乳素可以影響 Casein mRNA 的壽命
+- **① Transcription rate**
+  - 增加 2–4 倍
+  - Casein mRNA 的 transcription rate 在加入 prolactin 後 **1 小時內**增加，而且至少維持 24 小時
+- **② mRNA stability**
+  - 增加 17–25 倍
+  - Casein mRNA 的 half-life 大幅延長，表示 mRNA 被降解的速度明顯下降
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/effect_of_Prolactin_on_Half-Life_of_Casein_mRNA--Guyette%2C_W.A.%2C_R.J._Matusik%2C_and_J.M._Rosen_1127.png)
+
+#### 3’-UTR 有影響嗎?
+- transieffin receptor 是一種運輸鐵離子的蛋白
+- Joe Harford 等人發現，降低鐵的含量 (chelation，螯合)，會增加 transferrin receptor mRNA 的濃度
+- 反之，加入鐵 (+hemin or iron salts) 會降低該mRNA的濃度
+- mRNA half-life 的變化，可以從45 min 延長至數小時
+
+#### 鐵反映元件
+- IRE 在**transferrin receptor (TfR) 基因的3'-UTR區域**
+- Lukas Kühn 當時已經知道 TfR 有 5'-NTR (2280-nt) 跟 3'-NTR (2600 base)
+- Dianne Owen 跟他決定刪除其中 3'-UTR 約2300 bp 的區域，以及以削減promoter 為對照，看看會發生甚麼
+  - 可以發現，在削減TfR 啟動子 (藍色) 的情況下，細胞膜上面的 TfR 濃度依然會受到螯合劑影響
+  - 但是在削減 3'-UTR (綠色) 的情況下，無論有沒有加入螯合劑，細胞表面的受體濃度都相同
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/effect_of_the_3'-UTR_on_the_iron-responsiveness_of_cell_surface_concentration_of_TfR--experiment_made_by_Owen_and_K%C3%BChn_1127.png)
+
+#### 所以 IRE 到底長怎樣? 
+- 他是 RNA 上的一段特殊 **stem-loop structure (莖環結構)**，負責感應細胞內的 iron availability，進而調節鐵代謝相關蛋白質的表現
+- 下圖把兩種不同 mRNA 上的 IRE 放在一起比較...
+  - 左邊：Ferritin H chain mRNA 的 **5′-UTR**
+  - 右邊：Transferrin receptor（TfR）mRNA 的 **3′-UTR**
+- **Iron regulatory proteins (IRP1 和 IRP2)** 可以辨識並結合 IRE stem-loop，調控 mRNA 的 translation 或 stability，也就是: 
+  - RP 結合 TfR mRNA 3′-UTR 的 IREs
+  - 保護 mRNA，降低其被 degradation 的機會
+  - TfR mRNA stability ↑
+  - TfR expression ↑
+
+> [!Tip]
+> - 下面這兩個莖環都可以結合IRP 😏
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/comparison_of_stem_loop_structures_in_the_3'-UTR_of_the_human_TfR_mRNA_with_the_IRE_in_the_5'-UTR_of_the_human_ferritin_mRNA_1127.png)
+
+<iframe src="https://Jacklyn301.github.io/molecular_model/3SN2_Crystal%20structure%20analysis%20of%20iron%20regulatory%20protein%201%20in%20complex%20with%20transferrin%20receptor%20IRE%20B%20RNA.html" width="100%" height="650px"></iframe>
+
+#### 實驗又來了
+- Harford 等人做了一個1059 nt 長的短 RNA 轉錄本，該 RNA 上面有五種 IRE
+- 同時，在四個lane中，選擇加入某些競爭型RNA，他們會跟細胞萃取液的蛋白質競爭結合
+- 在**一般情況下，轉錄本跟萃取物中的蛋白質會結合，因此形成條紋**
+- 除非，該蛋白質被競爭型RNA搶先結合，這樣就不會產生條紋。不同泳道的競爭型RNA如下: 
+  - lane 1: 沒有競爭型RNA
+  - lane 2: 加入TfR mRNA 競爭型 RNA
+  - lane 3: 加入 ferritin mRNA 競爭型 RNA
+  - lane 4: 加入 $\beta$ -globin mRNA 競爭型 RNA
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/gel_mobility_shift_assay_for_IRE-binding_proteins--experiment_made_by_Harford_and_colleagues_1127.png)
+
+#### 納入突變的影響
+> [!Tip]
+> - **TfR mRNA 的鐵依賴性穩定性，除了 IRE 之外，還需要 3′-UTR 的其他序列嗎？**
+
+- Harford 等人又做了一個實驗，這次是看看突變後的3'-UTR 會不會受到鐵濃度的影響
+- **先看實驗條件: H 和 D**
+
+| 條件  | IRP–IRE binding | TfR mRNA |
+| --- | --- | --- |
+| H = **hemin**，鐵充足 | 減少  | 容易降解，含量下降 📉 |
+| D = **desferrioxamine**，缺鐵 | 增加  | 受到保護，含量上升 📈 |
+
+- 並且準備三種 3'-UTR
+
+|編號|特徵|說明|
+|---|---|---|
+|**TRS-1**|保留 B、C、D 區域|從原本 678-nt 的 3′-UTR 中，移除兩個 IRE 和 central loop，留下 250-nt synthetic element|
+|**TRS-3**|從 TRS-1 再移除其餘三個 IREs|測試完全沒有 IRE 的情況下，還能不能對鐵濃度產生反應|
+|**TRS-4**|從 TRS-1 移除三個 C residues，ΔC|測試這三個 C 是否參與 3′-UTR 的 turnover regulation|
+
+- 結果如下: 
+
+| Construct | H   | D   | % regulation |
+| --- | --- | --- | --- |
+| TRS-1 | 較弱  | 較強  | 100% |
+| TRS-3 | 強   | 強   | 2%  |
+| TRS-4 | 弱   | 弱   | 12% |
+| None | 無對應訊號 | 無對應訊號 | 不適用 |
+
+> [!Tip]
+> - **TRS-3: 移除 IRE 後，調控幾乎消失**
+> - **TRS-4: 刪除三個 C 後，調控能力大幅下降** 😏
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/effects_of_deletions_in_the_IRE_region_of_the_TfR_3'-UTR_on_iron_responsiveness--experiment_made_by_Harford_and_colleagues_1127.png)
+
+#### 總結
+> [!Tip]
+> - **IRP1 本身就可以是一種 aconitase**，aconitase 就是你在檸檬酸循環上面聽到的那個
+
+- Aconitase 是 TCA cycle 裡面的酵素，負責催化：
+
+$$\text{Citrate} \rightleftharpoons \text{Isocitrate}$$
+
+- 它需要一個含鐵硫的輔因子：
+
+$$[4Fe-4S]\text{ cluster}$$
+
+- 這個 iron-sulfur cluster 不只是裝飾品，而是 aconitase 執行酵素功能的重要結構
+- 在鐵很多的時候...
+  - IRP1 結合 $[4Fe-4S]$ cluster，形成具有 aconitase activity 的蛋白質
+  - 執行 citrate ↔ isocitrate 的轉換
+  - 不再具有有效的 IRE 結合活性
+- 鐵不足的時候...
+  - $[4Fe-4S]$ cluster 缺失，IRP1 轉變為 RNA-binding form (apoprotein)
+  - Aconitase activity 消失，可以結合 IRE
+  - **參與 iron-dependent post-transcriptional regulation**
+
+> [!Note]
+> - 所以IRE1結合上去時，可以避免RNase降解mRNA
+> - 但是當鐵充足時，aconitase就會失去原本bind IRE的活性，去作為酵素進行代謝，導致RNase更容易接觸mRNA
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/model_for_destabilization_of_TfR_mRNA_by_iron_1127.png)
+
+### RNA interference
+- 這個經典案例來自 Petunia (矮牽牛) 的花色研究
+  - 紫色區域：anthocyanin pigment 正常累積
+  - 白色區域：anthocyanin 合成途徑的相關基因表現受到抑制
+- 研究者原本希望透過增加花色相關基因的表現，讓花朵顏色更深
+- 結果卻出現部分花瓣失去色素的現象 (oops 💀)
+- 這種現象稱為 **cosuppression**[^5]
+
+[^5]: [10.1126/science.268.5211.686](https://www.science.org/doi/abs/10.1126/science.268.5211.686)
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/discovery_of_RNA-based_gene_silencing_in_petunia_1127.webp)
+
+#### cosuppression
+- 研究者發現，導入額外的 pigment-related gene，竟然可能同時抑制
+  - 外源導入的 transgene
+  - 植物原本的 endogenous homologous gene
+- 也就是說，外來基因不只是沒有成功增加表現量，還讓原本的基因一起被 silenced 😭
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
